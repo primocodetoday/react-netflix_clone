@@ -27,10 +27,10 @@ Netflix clone app</h3>
 
 | Main Tech | React                                  |
 | --------- | -------------------------------------- |
-| Addons    | Router, Redux, Thunk, Formik           |
+| Addons    | None           |
 | Backend   | Firebase                               |
-| Styles    | Styled Components, Theming, Flex, Grid |
-| Code      | ES6, Hooks, PropTypes, Linter(airbnb)  |
+| Styles    |                           |
+| Code      | ES6+, Hooks, PropTypes, Linter(airbnb)  |
 
 ## Screenshots 📺
 
