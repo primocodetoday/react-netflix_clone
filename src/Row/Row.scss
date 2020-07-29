@@ -1,4 +1,8 @@
-﻿.row__posters {
+﻿.row {
+  margin-left: 20px ;
+}
+
+.row__posters {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -18,6 +22,14 @@
 
   &:hover {
     transform: scale(1.09);
-    opacity: 1;
   }
 }
+
+.row__posterLarge {
+  max-height: 250px;
+
+  &:hover {
+    transform: scale(1.095);
+  }
+}
+
