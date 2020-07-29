@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import Row from 'Row/Row';
-import requests from 'requests';
+import requests from 'axios/requests';
+import Banner from 'Banner/Banner';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       {/* Nav */}
-      {/* Banner */}
+      <Banner />
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
@@ -22,6 +23,6 @@ function App() {
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
-}
+};
 
 export default App;
