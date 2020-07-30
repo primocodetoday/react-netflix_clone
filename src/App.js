@@ -3,11 +3,12 @@ import './App.css';
 import Row from 'Row/Row';
 import requests from 'axios/requests';
 import Banner from 'Banner/Banner';
+import Nav from 'Nav/Nav';
 
 const App = () => {
   return (
     <div className="app">
-      {/* Nav */}
+      <Nav />
       <Banner />
       <Row
         title="NETFLIX ORIGINALS"
