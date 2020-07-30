@@ -25,11 +25,10 @@ Netflix clone app</h3>
 
 ### Tech/framework used 🔧
 
-| Main Tech | React                                  |
-| --------- | -------------------------------------- |
-| Addons    | axios                    |
-| Backend   | Firebase                               |
-| Styles    |                           |
+| Main Tech | React                                             |
+| --------- | --------------------------------------------------|
+| Addons    | axios, react-youtube, movie-trailer               |
+| Styles    | SCSS, BEM                                         |
 | Code      | ES6+, Hooks, PropTypes, eslint(airbnb), stylelint |
 
 ## Screenshots 📺
@@ -59,6 +58,6 @@ Netflix clone app</h3>
 
 ### Live 📍
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a3b172d0-edc6-4cb9-81b7-d5f2a02e85b8/deploy-status)](https://pantry-app-react.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8736051-bc66-4d3d-87a5-0974ab5a54f3/deploy-status)](https://primnfclone.netlify.app/)
 
 <!-- ### License 🔱 -->
