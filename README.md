@@ -6,7 +6,7 @@
 
 <!-- </h1> -->
 
-<h2 align="center"> 🔥 Netflix 🔥</h2>
+<h2 align="center"> 🔥 Netflix clone v1.0🔥</h2>
 
 <h3 align="center">
 Netflix clone app</h3>
@@ -27,10 +27,10 @@ Netflix clone app</h3>
 
 | Main Tech | React                                  |
 | --------- | -------------------------------------- |
-| Addons    | None           |
+| Addons    | axios                    |
 | Backend   | Firebase                               |
 | Styles    |                           |
-| Code      | ES6+, Hooks, PropTypes, Linter(airbnb)  |
+| Code      | ES6+, Hooks, PropTypes, eslint(airbnb), stylelint |
 
 ## Screenshots 📺
 
