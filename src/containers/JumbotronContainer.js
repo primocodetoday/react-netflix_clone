@@ -2,7 +2,7 @@
 import { Jumbotron } from 'components';
 import jumboData from 'fixtures/jumbo.json';
 
-export const JumbotronContainer = () => {
+const JumbotronContainer = () => {
   return (
     <div className="app">
       <Jumbotron.Container>
@@ -21,3 +21,5 @@ export const JumbotronContainer = () => {
     </div>
   );
 };
+
+export default JumbotronContainer;

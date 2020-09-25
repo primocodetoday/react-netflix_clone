@@ -1,5 +1,6 @@
 import React from 'react';
-import { JumbotronContainer } from 'containers/JumbotronContainer';
+import JumbotronContainer from 'containers/JumbotronContainer';
+import FooterContainer from 'containers/FooterContainer';
 import GlobalStyles from 'global-styles';
 import 'normalize.css';
 
@@ -8,6 +9,7 @@ const App = () => {
     <div className="app">
       <GlobalStyles />
       <JumbotronContainer />
+      <FooterContainer />
     </div>
   );
 };
