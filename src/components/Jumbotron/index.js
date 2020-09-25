@@ -1,41 +1,59 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Item,
-  Inner,
-  Container,
-  Pane,
+  AnimationCard,
+  CardContainer,
+  CardText,
+  CardImg,
   Title,
   SubTitle,
   Image,
+  CardAnimation,
+  Animation,
+  Video,
 } from './styles/jumbotron';
 
 const Jumbotron = ({ children, direction }, ...restProps) => {
   return (
-    <Item {...restProps}>
-      <Inner direction={direction}>{children}</Inner>
-    </Item>
+    <AnimationCard {...restProps}>
+      <CardContainer direction={direction}>{children}</CardContainer>
+    </AnimationCard>
   );
 };
 
-Jumbotron.Container = function JumbotronContainer({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+Jumbotron.CardText = function JumbotronCardText({ children, ...restProps }) {
+  return <CardText {...restProps}>{children}</CardText>;
 };
 
-Jumbotron.Pane = function JumbotronPane({ children, ...restProps }) {
-  return <Pane {...restProps}>{children}</Pane>;
+Jumbotron.CardImg = function JumbotronCardImg({ children, ...restProps }) {
+  return <CardImg {...restProps}>{children}</CardImg>;
 };
 
 Jumbotron.Title = function JumbotronTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Jumbotron.SubTitle = function JumboSubtronTitle({ children, ...restProps }) {
+Jumbotron.SubTitle = function JumboSubTitle({ children, ...restProps }) {
   return <SubTitle {...restProps}>{children}</SubTitle>;
 };
 
 Jumbotron.Image = function JumbotronImage({ ...restProps }) {
   return <Image {...restProps} />;
+};
+
+Jumbotron.CardAnimation = function JumbotronCardAnimation({
+  children,
+  ...restProps
+}) {
+  return <CardAnimation {...restProps}>{children}</CardAnimation>;
+};
+
+Jumbotron.Animation = function JumbotronAnimation({ children, ...restProps }) {
+  return <Animation {...restProps}>{children}</Animation>;
+};
+
+Jumbotron.Video = function JumbotronVideo({ ...restProps }) {
+  return <Video {...restProps} />;
 };
 
 Jumbotron.propTypes = {

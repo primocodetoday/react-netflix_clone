@@ -2,23 +2,42 @@
 import { Jumbotron } from 'components';
 import jumboData from 'fixtures/jumbo.json';
 
+// TODO add download animation in mobile section of jumbotron
+
 const JumbotronContainer = () => {
   return (
-    <div className="app">
-      <Jumbotron.Container>
-        {jumboData.map((item) => (
-          <Jumbotron key={item.id} direction={item.direction}>
-            <Jumbotron.Pane>
-              <Jumbotron.Title>{item.title}</Jumbotron.Title>
-              <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
-            </Jumbotron.Pane>
-            <Jumbotron.Pane>
+    <>
+      {jumboData.map((item) => (
+        <Jumbotron key={item.id} direction={item.direction}>
+          <Jumbotron.CardText>
+            <Jumbotron.Title>{item.title}</Jumbotron.Title>
+            <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+          </Jumbotron.CardText>
+          <Jumbotron.CardImg>
+            <Jumbotron.CardAnimation>
               <Jumbotron.Image src={item.image} alt={item.alt} />
-            </Jumbotron.Pane>
-          </Jumbotron>
-        ))}
-      </Jumbotron.Container>
-    </div>
+              {item.animation && (
+                <Jumbotron.Animation
+                  maxHeight={item.animationParams.maxHeight}
+                  maxWidth={item.animationParams.maxWidth}
+                  top={item.animationParams.top}
+                  left={item.animationParams.left}
+                >
+                  <Jumbotron.Video
+                    loop
+                    muted
+                    playinline
+                    autoPlay
+                    src={item.animation}
+                    type="video/m4v"
+                  />
+                </Jumbotron.Animation>
+              )}
+            </Jumbotron.CardAnimation>
+          </Jumbotron.CardImg>
+        </Jumbotron>
+      ))}
+    </>
   );
 };
 
