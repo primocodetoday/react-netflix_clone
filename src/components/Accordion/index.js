@@ -4,9 +4,10 @@ import {
   Container,
   Inner,
   Header,
-  Body,
   Item,
   Span,
+  On,
+  Off,
 } from './styles/accordion';
 
 const ToggleContext = createContext();
@@ -52,13 +53,9 @@ Accordion.Body = function AccordionBody({ children, ...restProps }) {
   const { toggleShow } = useContext(ToggleContext);
 
   return toggleShow ? (
-    <Body maxHeight="1200" {...restProps}>
-      {children}
-    </Body>
+    <On {...restProps}>{children}</On>
   ) : (
-    <Body maxHeight="0" {...restProps}>
-      {children}
-    </Body>
+    <Off {...restProps}>{children}</Off>
   );
 };
 

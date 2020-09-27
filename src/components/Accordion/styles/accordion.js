@@ -71,6 +71,14 @@ export const Body = styled.div`
   user-select: none;
 `;
 
+export const On = styled(Body)`
+  max-height: 1200px;
+`;
+
+export const Off = styled(Body)`
+  max-height: 0px;
+`;
+
 export const Span = styled.span`
   display: inline-block;
   font-size: 22px;
