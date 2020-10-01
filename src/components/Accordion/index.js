@@ -6,9 +6,8 @@ import {
   Header,
   Item,
   Span,
-  On,
-  Off,
-} from './styles/accordion';
+  Body,
+} from './styled/StyledAccordion';
 
 const ToggleContext = createContext();
 
@@ -52,10 +51,10 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
 Accordion.Body = function AccordionBody({ children, ...restProps }) {
   const { toggleShow } = useContext(ToggleContext);
 
-  return toggleShow ? (
-    <On {...restProps}>{children}</On>
-  ) : (
-    <Off {...restProps}>{children}</Off>
+  return (
+    <Body style={{ maxHeight: toggleShow ? '1200px' : '0px' }} {...restProps}>
+      {children}
+    </Body>
   );
 };
 

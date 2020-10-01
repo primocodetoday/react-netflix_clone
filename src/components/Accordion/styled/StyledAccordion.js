@@ -19,6 +19,7 @@ export const Item = styled.div`
   margin-bottom: 10px;
   max-width: 670px;
   width: 93%;
+
   &:first-of-type {
     margin-top: 2em;
   }
@@ -65,18 +66,9 @@ export const Title = styled.h1`
 
 export const Body = styled.div`
   overflow: hidden;
-  max-height: ${({ maxHeight }) => maxHeight}px;
   transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   background: #303030;
   user-select: none;
-`;
-
-export const On = styled(Body)`
-  max-height: 1200px;
-`;
-
-export const Off = styled(Body)`
-  max-height: 0px;
 `;
 
 export const Span = styled.span`

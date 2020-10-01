@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Accordion } from 'components';
+import { Accordion, CTAForm } from 'components';
 import faqsData from 'fixtures/faqsData.json';
 
 const FaqContainer = () => {
@@ -14,6 +14,13 @@ const FaqContainer = () => {
           </Accordion.Body>
         </Accordion.Item>
       ))}
+      <CTAForm>
+        <CTAForm.Text>
+          Ready to watch? Enter your email to create or restart your membership.
+        </CTAForm.Text>
+        <CTAForm.Input placeholder="Email address" />
+        <CTAForm.Button>GET STARTED</CTAForm.Button>
+      </CTAForm>
     </Accordion>
   );
 };
