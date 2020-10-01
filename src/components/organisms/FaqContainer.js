@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Accordion, CTAForm } from 'components';
-import faqsData from 'fixtures/faqsData.json';
+import faqsData from 'constants/faqsData.json';
 
 const FaqContainer = () => {
   return (

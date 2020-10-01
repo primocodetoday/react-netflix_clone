@@ -11,7 +11,7 @@ import {
   CardAnimation,
   Animation,
   Video,
-} from './styles/jumbotron';
+} from './styled/StyledJumbotron';
 
 const Jumbotron = ({ children, direction }, ...restProps) => {
   return (

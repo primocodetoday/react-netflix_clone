@@ -2,7 +2,7 @@
 import Row from 'components/Row/Row';
 import requests from 'axios/requests';
 import Banner from 'components/Banner/Banner';
-import Nav from 'components/Nav';
+import Nav from 'Nav/Nav';
 
 const oldHome = () => {
   return (

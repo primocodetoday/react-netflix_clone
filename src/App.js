@@ -1,8 +1,8 @@
 import React from 'react';
 
-import JumbotronContainer from 'containers/JumbotronContainer';
-import FooterContainer from 'containers/FooterContainer';
-import FaqContainer from 'containers/FaqContainer';
+import JumbotronContainer from 'components/organisms/JumbotronContainer';
+import FooterContainer from 'components/organisms/FooterContainer';
+import FaqContainer from 'components/organisms/FaqContainer';
 
 import GlobalStyles from 'global-styles';
 import 'normalize.css';
