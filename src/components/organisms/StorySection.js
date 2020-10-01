@@ -4,7 +4,7 @@ import jumboData from 'constants/jumboData.json';
 
 // TODO add download animation in mobile section of jumbotron
 
-const JumbotronContainer = () => {
+const StorySection = () => {
   return (
     <>
       {jumboData.map((item) => (
@@ -41,4 +41,4 @@ const JumbotronContainer = () => {
   );
 };
 
-export default JumbotronContainer;
+export default StorySection;

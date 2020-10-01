@@ -1,8 +1,8 @@
 import React from 'react';
 
-import JumbotronContainer from 'components/organisms/JumbotronContainer';
-import FooterContainer from 'components/organisms/FooterContainer';
-import FaqContainer from 'components/organisms/FaqContainer';
+import StorySection from 'components/organisms/StorySection';
+import FooterWrapper from 'components/organisms/FooterWrapper';
+import FaqSection from 'components/organisms/FaqSection';
 
 import GlobalStyles from 'global-styles';
 import 'normalize.css';
@@ -11,9 +11,9 @@ const App = () => {
   return (
     <div className="app">
       <GlobalStyles />
-      <JumbotronContainer />
-      <FaqContainer />
-      <FooterContainer />
+      <StorySection />
+      <FaqSection />
+      <FooterWrapper />
     </div>
   );
 };

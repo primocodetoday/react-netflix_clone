@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Footer } from 'components';
 
-const FooterContainer = () => {
+const FooterWrapper = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Call 00 800 112 4392</Footer.Title>
@@ -39,4 +39,4 @@ const FooterContainer = () => {
   );
 };
 
-export default FooterContainer;
+export default FooterWrapper;

@@ -2,7 +2,7 @@
 import { Accordion, CTAForm } from 'components';
 import faqsData from 'constants/faqsData.json';
 
-const FaqContainer = () => {
+const FaqSection = () => {
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>
@@ -24,4 +24,4 @@ const FaqContainer = () => {
     </Accordion>
   );
 };
-export default FaqContainer;
+export default FaqSection;
