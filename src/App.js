@@ -1,20 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import StorySection from 'components/organisms/StorySection';
-import FooterWrapper from 'components/organisms/FooterWrapper';
-import FaqSection from 'components/organisms/FaqSection';
+import { Home, Browse, SignIn, SignUp } from 'views';
 
 import GlobalStyles from 'global-styles';
 import 'normalize.css';
 
+import { routes } from 'routes';
+
 const App = () => {
   return (
-    <div className="app">
+    <BrowserRouter>
       <GlobalStyles />
-      <StorySection />
-      <FaqSection />
-      <FooterWrapper />
-    </div>
+      <Route exact path={routes.home} component={Home} />
+      <Route path={routes.browse} component={Browse} />
+      <Route path={routes.signIn} component={SignIn} />
+      <Route path={routes.signUp} component={SignUp} />
+    </BrowserRouter>
   );
 };
 
