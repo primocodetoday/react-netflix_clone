@@ -8,7 +8,7 @@ const Cta = () => {
         Ready to watch? Enter your email to create or restart your membership.
       </CTAForm.Text>
       <CTAForm.Input placeholder="Email address" />
-      <CTAForm.Button>GET STARTED</CTAForm.Button>
+      <CTAForm.Button>TRY 30 DAYS FREE</CTAForm.Button>
     </CTAForm>
   );
 };

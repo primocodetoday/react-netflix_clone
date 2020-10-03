@@ -4,9 +4,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 10px;
   flex-wrap: wrap;
   z-index: 1;
+  flex-direction: row;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -15,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   border: 0;
   padding: 10px;
@@ -23,14 +25,15 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
-export const Text = styled.h1`
+export const Text = styled.h3`
   font-size: 19.2px;
   color: white;
   text-align: center;
   font-weight: normal;
+  padding: 0 10%;
 
   @media (max-width: 600px) {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
   }
 `;
@@ -44,7 +47,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   padding: 0 32px;
   font-size: 26px;
-  font-weight: normal;
+  font-weight: 400;
   border: 0;
   border-radius: 2px;
   cursor: pointer;
@@ -67,6 +70,5 @@ export const Button = styled.button`
     height: 50px;
     font-size: 16px;
     margin-top: 20px;
-    font-weight: bold;
   }
 `;
