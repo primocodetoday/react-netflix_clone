@@ -1,7 +1,7 @@
 ﻿import React from 'react';
-import { CTAForm } from 'components';
+import { CTAForm } from 'components/molecules';
 
-const CTASection = () => {
+const Cta = () => {
   return (
     <CTAForm>
       <CTAForm.Text>
@@ -13,4 +13,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default Cta;

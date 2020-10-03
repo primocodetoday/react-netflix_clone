@@ -6,7 +6,7 @@ import { Home, Browse, SignIn, SignUp } from 'views';
 import GlobalStyles from 'global-styles';
 import 'normalize.css';
 
-import { routes } from 'routes';
+import routes from 'routes';
 
 const App = () => {
   return (

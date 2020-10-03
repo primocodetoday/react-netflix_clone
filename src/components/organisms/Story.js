@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import { Jumbotron } from 'components';
+import { Jumbotron } from 'components/molecules';
 import jumboData from 'constants/jumboData.json';
 
 // TODO add download animation in mobile section of jumbotron
 
-const StorySection = () => {
+const Story = () => {
   return (
     <>
       {jumboData.map((item) => (
@@ -41,4 +41,4 @@ const StorySection = () => {
   );
 };
 
-export default StorySection;
+export default Story;

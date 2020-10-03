@@ -8,6 +8,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     color: #333333;
     font-size: 16px;
-  }`;
+  }
+  
+  a {
+    text-decoration: none
+  }
+  `;
 
 export default GlobalStyle;

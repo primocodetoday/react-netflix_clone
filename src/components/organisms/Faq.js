@@ -1,9 +1,9 @@
 ﻿import React from 'react';
-import { Accordion } from 'components';
-import CTASection from 'components/organisms/CTASection';
+import { Accordion } from 'components/molecules';
+import Cta from 'components/organisms/Cta';
 import faqsData from 'constants/faqsData.json';
 
-const FaqSection = () => {
+const Faq = () => {
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>
@@ -15,8 +15,8 @@ const FaqSection = () => {
           </Accordion.Body>
         </Accordion.Item>
       ))}
-      <CTASection />
+      <Cta />
     </Accordion>
   );
 };
-export default FaqSection;
+export default Faq;
