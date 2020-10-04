@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Footer } from 'components/molecules';
+import { Footer } from 'components';
 
 const FooterSection = () => {
   return (

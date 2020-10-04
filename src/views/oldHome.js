@@ -1,8 +1,8 @@
 ﻿import React from 'react';
-import Row from 'components/Row/Row';
+import Row from 'components/_old/Row/Row';
 import requests from 'axios/requests';
-import Banner from 'components/Banner/Banner';
-import Nav from 'components/Nav/Nav';
+import Banner from 'components/_old/Banner/Banner';
+import Nav from 'components/_old/Nav/Nav';
 
 const oldHome = () => {
   return (

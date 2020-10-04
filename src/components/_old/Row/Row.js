@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios/axios';
-import 'components/Row/Row.scss';
+import 'components/_old/Row/Row.scss';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 

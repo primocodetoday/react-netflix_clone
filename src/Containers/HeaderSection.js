@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Header } from 'components/molecules';
+import { Header } from 'components';
 import routes from 'routes';
 
 const HeaderSection = ({ bg, children }) => {

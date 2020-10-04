@@ -1,7 +1,7 @@
 ﻿import React from 'react';
-import { CTAForm } from 'components/molecules';
+import { CTAForm } from 'components';
 
-const Cta = () => {
+const CtaContainer = () => {
   return (
     <CTAForm>
       <CTAForm.Text>
@@ -13,4 +13,4 @@ const Cta = () => {
   );
 };
 
-export default Cta;
+export default CtaContainer;

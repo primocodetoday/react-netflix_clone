@@ -1,9 +1,14 @@
 ﻿import React from 'react';
+import HeaderSection from 'Containers/HeaderSection';
+import FooterSection from 'Containers/FooterSection';
 
 const SignIn = () => {
   return (
     <>
-      <p>SignIn View</p>
+      <HeaderSection>
+        <p>SignIn View</p>
+      </HeaderSection>
+      <FooterSection />
     </>
   );
 };

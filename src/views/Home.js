@@ -1,10 +1,10 @@
 ﻿import React from 'react';
 
-import Story from 'components/organisms/Story';
-import FooterSection from 'components/organisms/FooterSection';
-import HeaderSection from 'components/organisms/HeaderSection';
-import Faq from 'components/organisms/Faq';
-import { CTAForm, Banner } from 'components/molecules';
+import StorySection from 'Containers/StorySection';
+import FooterSection from 'Containers/FooterSection';
+import HeaderSection from 'Containers/HeaderSection';
+import FaqContainer from 'Containers/FaqSection';
+import { CTAForm, Banner } from 'components';
 
 const Home = () => {
   return (
@@ -23,8 +23,8 @@ const Home = () => {
           </CTAForm>
         </Banner>
       </HeaderSection>
-      <Story />
-      <Faq />
+      <StorySection />
+      <FaqContainer />
       <FooterSection />
     </>
   );
