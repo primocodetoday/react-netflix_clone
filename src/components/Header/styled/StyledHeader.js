@@ -1,4 +1,5 @@
 ﻿import styled from 'styled-components/macro';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -80,7 +81,7 @@ export const Logo = styled.img`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(RouterLink)`
   display: block;
   background-color: #e50914;
   height: fit-content;

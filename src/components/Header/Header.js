@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { Container, Top, Gradient, Logo, Button } from './styled/StyledHeader';
 
@@ -21,18 +21,14 @@ Header.Gradient = function HeaderGradient({ ...restProps }) {
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
   return (
-    <Link to={to}>
+    <RouterLink to={to}>
       <Logo {...restProps} />
-    </Link>
+    </RouterLink>
   );
 };
 
-Header.Button = function HeaderButton({ to, children, ...restProps }) {
-  return (
-    <Link to={to}>
-      <Button {...restProps}>{children}</Button>
-    </Link>
-  );
+Header.Button = function HeaderButton({ children, ...restProps }) {
+  return <Button {...restProps}>{children}</Button>;
 };
 
 export default Header;
