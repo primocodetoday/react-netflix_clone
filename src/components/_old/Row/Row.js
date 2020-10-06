@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios/axios';
+import instance from 'axios/init';
 import 'components/_old/Row/Row.scss';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
@@ -13,7 +13,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl);
+      const request = await instance.get(fetchUrl);
       setMovies(request.data.results);
       return request;
     }

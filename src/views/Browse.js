@@ -1,9 +1,17 @@
 ﻿import React from 'react';
+import useContent from 'hooks/useContent';
+import genreFilter from 'helpers/genreFilter';
+import BrowseContainer from 'Containers/BrowseContainer';
 
 const Browse = () => {
+  const { series } = useContent('series');
+  const { films } = useContent('films');
+
+  const slides = genreFilter({ series, films });
+
   return (
     <>
-      <p>Browse View</p>
+      <BrowseContainer slides={slides} />
     </>
   );
 };

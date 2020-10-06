@@ -1,6 +1,6 @@
 ﻿/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
-import axios from 'axios/axios';
+import axios from 'axios/init';
 import requests from 'axios/requests';
 import 'components/_old/Banner/Banner.scss';
 
