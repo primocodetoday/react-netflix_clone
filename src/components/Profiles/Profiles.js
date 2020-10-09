@@ -3,7 +3,7 @@ import {
   Container,
   Title,
   List,
-  User,
+  Item,
   Avatar,
   Name,
 } from './styles/StyledProfiles';
@@ -12,19 +12,19 @@ const Profiles = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Profiles.Title = function ProfilesTitle({ children, restProps }) {
+Profiles.Title = function ProfilesTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Profiles.List = function ProfilesList({ children, restProps }) {
+Profiles.List = function ProfilesList({ children, ...restProps }) {
   return <List {...restProps}>{children}</List>;
 };
 
-Profiles.User = function ProfilesUser({ children, restProps }) {
-  return <User {...restProps}>{children}</User>;
+Profiles.Item = function ProfilesItem({ children, ...restProps }) {
+  return <Item {...restProps}>{children}</Item>;
 };
 
-Profiles.Avatar = function ProfilesAvatar({ src, restProps }) {
+Profiles.Avatar = function ProfilesAvatar({ src, ...restProps }) {
   return (
     <Avatar
       {...restProps}
@@ -35,7 +35,7 @@ Profiles.Avatar = function ProfilesAvatar({ src, restProps }) {
   );
 };
 
-Profiles.Name = function ProfilesName({ children, restProps }) {
+Profiles.Name = function ProfilesName({ children, ...restProps }) {
   return <Name {...restProps}>{children}</Name>;
 };
 

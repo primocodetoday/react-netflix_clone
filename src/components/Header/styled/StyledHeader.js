@@ -9,20 +9,20 @@ export const Container = styled.div`
   background-size: cover;
   background-image: url(${({ bg }) =>
     bg
-      ? `url("https://image.tmdb.org/t/p/original/${bg}")`
+      ? `https://image.tmdb.org/t/p/original/${bg}`
       : 'assets/images/home-bg-large.jpg'});
 
   @media (max-width: 1000px) {
     background-image: url(${({ bg }) =>
       bg
-        ? `url("https://image.tmdb.org/t/p/original/${bg}")`
+        ? `https://image.tmdb.org/t/p/original/${bg}`
         : 'assets/images/home-bg-small.jpg'});
   }
 
   @media (max-width: 1500px) {
     background-image: url(${({ bg }) =>
       bg
-        ? `url("https://image.tmdb.org/t/p/original/${bg}")`
+        ? `https://image.tmdb.org/t/p/original/${bg}`
         : 'assets/images/home-bg-medium.jpg'});
   }
 
