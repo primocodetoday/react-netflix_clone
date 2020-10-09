@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import useContent from 'hooks/useContent';
 import genreFilter from 'helpers/genreFilter';
-import BrowseContainer from 'Containers/BrowseContainer';
+import BrowseContainer from 'containers/BrowseContainer';
 
 const Browse = () => {
   const { series } = useContent('series');

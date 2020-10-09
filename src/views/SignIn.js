@@ -1,8 +1,8 @@
 ﻿import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
-import HeaderSection from 'Containers/HeaderSection';
-import FooterSection from 'Containers/FooterSection';
+import HeaderSection from 'containers/HeaderSection';
+import FooterSection from 'containers/FooterSection';
 import { Form } from 'components';
 import routes from 'routes';
 

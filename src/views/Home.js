@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 
-import StorySection from 'Containers/StorySection';
-import FooterSection from 'Containers/FooterSection';
-import HeaderSection from 'Containers/HeaderSection';
-import FaqContainer from 'Containers/FaqSection';
+import StorySection from 'containers/StorySection';
+import FooterSection from 'containers/FooterSection';
+import HeaderSection from 'containers/HeaderSection';
+import FaqContainer from 'containers/FaqSection';
 import { CTAForm, Banner } from 'components';
 
 const Home = () => {

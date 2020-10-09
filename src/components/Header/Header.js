@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { Container, Top, Gradient, Logo, Button } from './styled/StyledHeader';
 
-const Header = ({ bg = false, children, ...restProps }) => {
+const Header = ({ bg, children, ...restProps }) => {
   return (
     <Container bg={bg} {...restProps}>
       {children}
@@ -11,7 +11,7 @@ const Header = ({ bg = false, children, ...restProps }) => {
   );
 };
 
-Header.Top = function HeaderFrame({ children, restProps }) {
+Header.Top = function HeaderTop({ children, restProps }) {
   return <Top {...restProps}>{children}</Top>;
 };
 

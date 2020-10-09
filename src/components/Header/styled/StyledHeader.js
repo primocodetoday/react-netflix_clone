@@ -1,4 +1,4 @@
-﻿import styled from 'styled-components/macro';
+﻿import styled, { css } from 'styled-components/macro';
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
@@ -25,6 +25,14 @@ export const Container = styled.div`
         ? `url("https://image.tmdb.org/t/p/original/${bg}")`
         : 'assets/images/home-bg-medium.jpg'});
   }
+
+  ${({ isProfiles }) =>
+    isProfiles &&
+    css`
+      @media (min-width: 1px) {
+        background-image: none;
+      }
+    `}
 `;
 
 export const Gradient = styled.div`
