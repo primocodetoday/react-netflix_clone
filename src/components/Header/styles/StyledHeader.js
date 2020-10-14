@@ -2,33 +2,35 @@
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: center center;
   background-size: cover;
-  background-image: url(${({ bg }) =>
+  background-image: ${({ bg }) =>
     bg
-      ? `https://image.tmdb.org/t/p/original/${bg}`
-      : 'assets/images/home-bg-large.jpg'});
+      ? `url(https://image.tmdb.org/t/p/original/${bg})`
+      : `url(assets/images/home-bg-large.jpg)`};
 
   @media (max-width: 1000px) {
-    background-image: url(${({ bg }) =>
+    background-image: ${({ bg }) =>
       bg
-        ? `https://image.tmdb.org/t/p/original/${bg}`
-        : 'assets/images/home-bg-small.jpg'});
+        ? `url(https://image.tmdb.org/t/p/original/${bg})`
+        : `url(assets/images/home-bg-small.jpg)`};
   }
 
   @media (max-width: 1500px) {
-    background-image: url(${({ bg }) =>
+    background-image: ${({ bg }) =>
       bg
-        ? `https://image.tmdb.org/t/p/original/${bg}`
-        : 'assets/images/home-bg-medium.jpg'});
+        ? `url(https://image.tmdb.org/t/p/original/${bg})`
+        : `url(assets/images/home-bg-medium.jpg)`};
   }
 
   ${({ isProfiles }) =>
     isProfiles &&
     css`
+      height: unset;
       @media (min-width: 1px) {
         background-image: none;
       }
@@ -110,4 +112,61 @@ export const Button = styled(RouterLink)`
   &:hover {
     background-color: #f40612;
   }
+`;
+
+export const Feature = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  width: 50%;
+
+  /* @media (max-width: 1100px) {
+    display: none;
+  } */
+`;
+
+export const Title = styled.h1`
+  padding-bottom: 0.3rem;
+  font-weight: 800;
+  color: white;
+  font-size: 22px;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  margin: 0;
+`;
+
+export const Description = styled.p`
+  margin: 0;
+  width: 45rem;
+  max-width: 360px;
+  height: 60px;
+  padding-top: 0.7rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+`;
+
+export const Link = styled(RouterLink)`
+  color: #e5e5e5;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+// TODO make burger for small screens
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
 `;

@@ -1,11 +1,11 @@
 ﻿import React from 'react';
-import useContent from 'hooks/useContent';
+import useFirebaseContent from 'hooks/useFirebaseContent';
 import genreFilter from 'helpers/genreFilter';
 import BrowseContainer from 'containers/BrowseContainer';
 
 const Browse = () => {
-  const { series } = useContent('series');
-  const { films } = useContent('films');
+  const { series } = useFirebaseContent('series');
+  const { films } = useFirebaseContent('films');
 
   const slides = genreFilter({ series, films });
 
