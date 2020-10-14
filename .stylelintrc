@@ -11,8 +11,18 @@
       {
         "ignoreTypes": [
           "/-styled-mixin/",
+          "/-styled-mixin0",
           "$dummyValue"
         ]
       }
     ],
+  "property-no-unknown": [
+    true, 
+    {
+      "checkPrefixed": true,
+      "ignoreProperties": [
+        "/-styled-mixin/"
+        ]
+    }
+  ],
 }

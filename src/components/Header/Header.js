@@ -5,11 +5,14 @@ import {
   Button,
   Container,
   Description,
+  Dropdown,
   Feature,
   Gradient,
   Group,
   Logo,
   Link,
+  Picture,
+  Profile,
   Top,
   Title,
 } from './styles/StyledHeader';
@@ -50,6 +53,25 @@ Header.Feature = function HeaderFeature({ children, ...restProps }) {
   return <Feature {...restProps}>{children}</Feature>;
 };
 
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
+};
+
+Header.Profile = function HeaderProfile({ children, ...restProps }) {
+  return <Profile {...restProps}>{children}</Profile>;
+};
+
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+  return (
+    <Picture
+      {...restProps}
+      src={
+        src ? `assets/images/profiles/${src}.png` : `assets/images/loading.gif`
+      }
+    />
+  );
+};
+
 Header.Title = function HeaderTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
@@ -59,7 +81,11 @@ Header.Description = function HeaderDescription({ children, ...restProps }) {
 };
 
 Header.MenuLink = function HeaderMenuLink({ children, to, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+  return (
+    <Link {...restProps} to={to}>
+      {children}
+    </Link>
+  );
 };
 
 export default Header;

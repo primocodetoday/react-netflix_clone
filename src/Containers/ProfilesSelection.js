@@ -5,7 +5,7 @@ import routes from 'routes';
 const ProfilesSelection = ({ user, setProfile }) => {
   return (
     <>
-      <Header isProfiles>
+      <Header isNotBrowse isProfiles>
         <Header.Top>
           <Header.Logo
             to={routes.home}

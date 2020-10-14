@@ -4,7 +4,7 @@ import routes from 'routes';
 
 const HeaderSection = ({ bg, children }) => {
   return (
-    <Header>
+    <Header isNotBrowse>
       <Header.Top>
         <Header.Logo
           to={routes.home}

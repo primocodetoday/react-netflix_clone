@@ -37,22 +37,30 @@ const BrowseContainer = () => {
               src="assets/images/Netflix_logo.png"
               alt="Netflix"
             />
-            <Header.MenuLink>Home</Header.MenuLink>
-            <Header.MenuLink>TV Shows</Header.MenuLink>
-            <Header.MenuLink>Movies</Header.MenuLink>
-            <Header.MenuLink>Latest</Header.MenuLink>
-            <Header.MenuLink>My List</Header.MenuLink>
+            <Header.MenuLink to="#">Home</Header.MenuLink>
+            <Header.MenuLink to="#">TV Shows</Header.MenuLink>
+            <Header.MenuLink to="#">Movies</Header.MenuLink>
+            <Header.MenuLink to="#">Latest</Header.MenuLink>
+            <Header.MenuLink to="#">My List</Header.MenuLink>
           </Header.Group>
           <Header.Group>
             <Header.Profile>
               <Header.Picture src={1} />
+              <Header.Dropdown>
+                <Header.Group>
+                  <Header.Picture src={1} />
+                  <Header.MenuLink to="#">{user.displayName}</Header.MenuLink>
+                </Header.Group>
+                <Header.Group>
+                  <Header.MenuLink
+                    to="#"
+                    onClick={() => firebase.auth().signOut()}
+                  >
+                    Sign out
+                  </Header.MenuLink>
+                </Header.Group>
+              </Header.Dropdown>
             </Header.Profile>
-            <Header.Dropdown>
-              <Header.Group>
-                <Header.Picture src={1} />
-                <Header.MenuLink>{user.displayName}</Header.MenuLink>
-              </Header.Group>
-            </Header.Dropdown>
           </Header.Group>
         </Header.Top>
         <Header.Feature>
