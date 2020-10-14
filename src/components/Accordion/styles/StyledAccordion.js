@@ -7,18 +7,18 @@ export const Container = styled.div`
 
 export const Inner = styled.div`
   display: flex;
-  padding: 70px 45px;
   flex-direction: column;
   max-width: 815px;
+  padding: 70px 45px;
   margin: auto;
 `;
 
 export const Item = styled.div`
-  color: white;
-  margin: auto;
-  margin-bottom: 10px;
-  max-width: 670px;
   width: 93%;
+  max-width: 670px;
+  margin: auto;
+  color: white;
+  margin-bottom: 10px;
 
   &:first-of-type {
     margin-top: 2em;
@@ -32,10 +32,10 @@ export const Header = styled.div`
   margin-bottom: 1px;
   font-size: 23px;
   font-weight: normal;
-  background: #303030;
-  padding: 0.8em 1.2em 0.8em 1.2em;
-  user-select: none;
   align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.2em;
+  background: #303030;
+  user-select: none;
 
   img {
     filter: brightness(0) invert(0.6);
@@ -66,18 +66,18 @@ export const Title = styled.h1`
 
 export const Body = styled.div`
   overflow: hidden;
-  transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   background: #303030;
+  transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   user-select: none;
 `;
 
 export const Span = styled.span`
   display: inline-block;
+  padding: 1.2em;
   font-size: 22px;
   font-weight: normal;
-  line-height: normal;
-  padding: 1.2em;
   white-space: pre-wrap;
+  line-height: normal;
 
   @media (max-width: 600px) {
     font-size: 16px;

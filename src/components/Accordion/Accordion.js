@@ -7,7 +7,7 @@ import {
   Item,
   Span,
   Body,
-} from './styled/StyledAccordion';
+} from './styles/StyledAccordion';
 
 const ToggleContext = createContext();
 
