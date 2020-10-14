@@ -2,23 +2,23 @@
 
 export const Container = styled.div`
   display: flex;
+  z-index: 1;
   flex-direction: column;
-  padding: 165px 50px;
   max-width: 950px;
+  padding: 165px 50px;
   margin: 0 auto;
   text-align: center;
-  z-index: 1;
   border-bottom: 8px solid #222;
 `;
 
 export const Title = styled.h1`
-  color: #fff;
-  z-index: 1;
-  font-size: 50px;
-  margin: auto;
-  max-width: 640px;
-  line-height: 1.1;
   position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: auto;
+  line-height: 1.1;
+  color: #fff;
+  font-size: 50px;
   text-align: center;
 
   @media (max-width: 1449px) {
@@ -27,11 +27,11 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  color: #fff;
   z-index: 1;
-  font-size: 26px;
-  margin: 1rem auto 0;
   max-width: 640px;
+  margin: 1rem auto 0;
+  color: #fff;
+  font-size: 26px;
   font-weight: 400;
 
   @media (max-width: 600px) {

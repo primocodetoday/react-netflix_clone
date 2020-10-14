@@ -1,6 +1,29 @@
 ﻿import styled, { css } from 'styled-components/macro';
 import { Link as RouterLink } from 'react-router-dom';
 
+export const Button = styled(RouterLink)`
+  box-sizing: border-box;
+  display: block;
+  background-color: #e50914;
+  height: fit-content;
+  padding: 7px 17px;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 5.6px;
+
+  @media (max-width: 550px) {
+    padding: 4px 8px;
+  }
+
+  &:hover {
+    background-color: #f40612;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   position: relative;
@@ -45,6 +68,11 @@ export const Container = styled.div`
 `;
 
 export const Gradient = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
     to top,
@@ -52,21 +80,16 @@ export const Gradient = styled.div`
     rgba(0, 0, 0, 0) 60%,
     rgba(0, 0, 0, 0.8) 100%
   );
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   color: white;
 `;
 
 export const Top = styled.div`
   display: flex;
-  margin: 0 56px;
-  padding-top: 20px;
   z-index: 3;
   justify-content: space-between;
   align-items: center;
+  margin: 0 56px;
+  padding-top: 20px;
   transition: all 0.5s;
   transition-timing-function: ease-in;
 
@@ -80,52 +103,29 @@ export const Top = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 45px;
   width: 166.5px;
+  height: 45px;
   padding-top: 8px;
 
   @media (max-width: 1449px) {
-    height: 36px;
     width: 133px;
+    height: 36px;
   }
   @media (max-width: 950px) {
-    height: 29.19px;
     width: 108px;
+    height: 29.19px;
   }
   @media (max-width: 550px) {
-    height: 24px;
     width: 88.8px;
-  }
-`;
-
-export const Button = styled(RouterLink)`
-  display: block;
-  background-color: #e50914;
-  height: fit-content;
-  color: white;
-  border: 0;
-  font-size: 15px;
-  border-radius: 3px;
-  padding: 7px 17px;
-  cursor: pointer;
-  text-decoration: none;
-  box-sizing: border-box;
-  margin-top: 5.6px;
-
-  @media (max-width: 550px) {
-    padding: 4px 8px;
-  }
-
-  &:hover {
-    background-color: #f40612;
+    height: 24px;
   }
 `;
 
 export const Feature = styled.div`
+  display: flex;
   position: absolute;
   top: 50%;
   left: 4%;
-  display: flex;
   flex-direction: column;
   align-items: normal;
   width: 50%;
@@ -136,26 +136,26 @@ export const Feature = styled.div`
 `;
 
 export const Title = styled.h1`
+  margin: 0;
+  line-height: normal;
   padding-bottom: 0.3rem;
   font-weight: 800;
   color: white;
   font-size: 22px;
-  line-height: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  margin: 0;
 `;
 
 export const Description = styled.p`
-  margin: 0;
   width: 45rem;
   max-width: 360px;
   height: 60px;
+  margin: 0;
   padding-top: 0.7rem;
+  line-height: 1.3;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
   font-size: 0.8rem;
   font-weight: 600;
-  line-height: 1.3;
 `;
 
 export const Link = styled(RouterLink)`
@@ -179,22 +179,22 @@ export const Group = styled.div`
 `;
 
 export const Picture = styled.button`
-  background: url(${({ src }) => src});
-  background-size: contain;
-  border: 0;
   width: 32px;
   height: 32px;
+  border: 0;
+  background: url(${({ src }) => src});
+  background-size: contain;
   cursor: pointer;
 `;
 
 export const Dropdown = styled.div`
   display: none;
   position: absolute;
-  background-color: black;
-  padding: 10px;
-  width: 150px;
   top: 32px;
   right: 10px;
+  width: 100px;
+  background-color: black;
+  padding: 10px;
 
   ${Group}:last-of-type ${Link} {
     cursor: pointer;
@@ -213,11 +213,12 @@ export const Dropdown = styled.div`
   }
 
   button {
-    margin-right: 10px;
+    margin-right: 0px;
   }
 
-  p {
+  a {
     font-size: 12px;
+    margin-left: 10px;
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -225,9 +226,9 @@ export const Dropdown = styled.div`
 
 export const Profile = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   margin-left: 20px;
-  position: relative;
 
   button {
     cursor: pointer;
@@ -237,4 +238,46 @@ export const Profile = styled.div`
     display: flex;
     flex-direction: column;
   }
+`;
+
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+export const SearchIcon = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`;
+export const SearchInput = styled.input`
+  background-color: #44444459;
+  width: 0px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid white;
+  color: white;
+  transition: width 0.5s;
+  font-size: 14px;
+  margin-left: 0;
+  opacity: 0;
+
+  ${({ active }) =>
+    active &&
+    css`
+      width: 200px;
+      padding: 0 10px;
+      margin-left: 10px;
+      opacity: 1;
+    `}
 `;

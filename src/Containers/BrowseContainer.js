@@ -9,6 +9,7 @@ import requests from 'axios/requests';
 const BrowseContainer = () => {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
 
   const movie = useMovie(requests.fetchNetflixOriginals);
 
@@ -23,8 +24,10 @@ const BrowseContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, [profile.displayName]);
+
+  // TODO Add Gradient on Top and bottom
 
   return profile.displayName ? (
     <>
@@ -44,6 +47,7 @@ const BrowseContainer = () => {
             <Header.MenuLink to="#">My List</Header.MenuLink>
           </Header.Group>
           <Header.Group>
+            <Header.Search search={search} setSearch={setSearch} />
             <Header.Profile>
               <Header.Picture src={1} />
               <Header.Dropdown>

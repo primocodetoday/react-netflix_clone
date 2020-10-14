@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Container, Text, Input, Button } from './styled/StyledCTAForm';
+import { Container, Text, Input, Button } from './styles/StyledCTAForm';
 
 const CTAForm = ({ children, restProps }) => {
   return <Container {...restProps}>{children}</Container>;

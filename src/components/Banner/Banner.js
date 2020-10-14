@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-import { Container, Title, SubTitle } from './styled/StyledBanner';
+import { Container, Title, SubTitle } from './styles/StyledBanner';
 
 const Banner = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;

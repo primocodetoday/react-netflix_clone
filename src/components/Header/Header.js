@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import {
@@ -13,6 +13,9 @@ import {
   Link,
   Picture,
   Profile,
+  Search,
+  SearchIcon,
+  SearchInput,
   Top,
   Title,
 } from './styles/StyledHeader';
@@ -32,6 +35,8 @@ Header.Top = function HeaderTop({ children, restProps }) {
 Header.Group = function HeaderGroup({ children, restProps }) {
   return <Group {...restProps}>{children}</Group>;
 };
+
+// TODO Correct this gradient
 
 Header.Gradient = function HeaderGradient({ ...restProps }) {
   return <Gradient {...restProps} />;
@@ -69,6 +74,24 @@ Header.Picture = function HeaderPicture({ src, ...restProps }) {
         src ? `assets/images/profiles/${src}.png` : `assets/images/loading.gif`
       }
     />
+  );
+};
+
+Header.Search = function HeaderSearch({ search, setSearch, ...restProps }) {
+  const [searchActive, setSearchActive] = useState(false);
+
+  return (
+    <Search {...restProps}>
+      <SearchIcon onClick={() => setSearchActive(!searchActive)}>
+        <img src="/assets/icons/search.png" alt="Search" />
+      </SearchIcon>
+      <SearchInput
+        value={search}
+        onChange={({ target }) => setSearch(target.value)}
+        placeholder="Search Movies and TV Shows"
+        active={searchActive}
+      />
+    </Search>
   );
 };
 
