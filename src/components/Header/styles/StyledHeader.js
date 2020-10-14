@@ -2,10 +2,10 @@
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  height: 56vw;
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
+  height: 56vw;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
