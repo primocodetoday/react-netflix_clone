@@ -24,7 +24,7 @@ const BrowseContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 2000);
   }, [profile.displayName]);
 
   // TODO Add Gradient on Top and bottom

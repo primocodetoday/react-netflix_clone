@@ -9,7 +9,7 @@ import {
   Link,
   Input,
   Submit,
-} from './styled/StyledForm';
+} from './styles/StyledForm';
 
 const Form = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;

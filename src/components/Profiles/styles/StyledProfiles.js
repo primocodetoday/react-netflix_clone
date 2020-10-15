@@ -5,8 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
   max-width: 80%;
+  margin: auto;
 `;
 
 export const Avatar = styled.img`
@@ -18,10 +18,10 @@ export const Avatar = styled.img`
 `;
 
 export const List = styled.ul`
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: row;
+  padding: 0;
+  margin: 0;
 `;
 
 export const Name = styled.p`

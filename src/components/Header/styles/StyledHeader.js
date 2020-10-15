@@ -54,8 +54,8 @@ export const Container = styled.div`
   ${({ isNotBrowse }) =>
     isNotBrowse &&
     css`
-      height: unset;
       position: unset;
+      height: unset;
     `}
 
   ${({ isProfiles }) =>

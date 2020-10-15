@@ -7,7 +7,7 @@ import {
   Title,
   Text,
   Break,
-} from './styled/StyledFooter';
+} from './styles/StyledFooter';
 
 const Footer = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;

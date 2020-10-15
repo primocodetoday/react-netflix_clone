@@ -14,10 +14,10 @@ export const ReleaseBody = createGlobalStyle`
 
 export const Spinner = styled.div`
   position: fixed;
+  z-index: 999;
   width: 100%;
   height: 100%;
   background-color: black;
-  z-index: 999;
 
   :after {
     content: '';
@@ -39,28 +39,28 @@ export const Spinner = styled.div`
 
   @-ms-keyframes spin {
     from {
-      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     to {
-      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 
   @-moz-keyframes spin {
     from {
-      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     to {
-      -moz-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 
   @-webkit-keyframes spin {
     from {
-      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 
@@ -75,11 +75,11 @@ export const Spinner = styled.div`
 `;
 
 export const Picture = styled.img`
-  width: 50px;
-  height: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 50px;
+  height: 50px;
   margin-top: -100px;
   margin-left: -22px;
 `;

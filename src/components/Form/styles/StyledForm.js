@@ -2,34 +2,34 @@
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 660px;
-  border-radius: 5px;
   box-sizing: border-box;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
   width: 100%;
-  margin: 30px auto;
   max-width: 450px;
+  min-height: 660px;
   padding: 60px 68px 40px;
+  border-radius: 5px;
+  margin: 30px auto;
   margin-bottom: 100px;
   background-color: rgba(0, 0, 0, 0.75);
 `;
 
 export const Error = styled.div`
-  background: #e87c03;
   border-radius: 4px;
   font-size: 14px;
-  margin: 0 0 16px;
-  color: white;
   padding: 15px 20px;
+  margin: 0 0 16px;
+  background: #e87c03;
+  color: white;
 `;
 
 export const Base = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 450px;
   width: 100%;
+  max-width: 450px;
 `;
 export const Title = styled.h1`
   color: #fff;
@@ -59,12 +59,12 @@ export const Link = styled(RouterLink)`
 `;
 
 export const Input = styled.input`
-  background: #333;
-  border-radius: 4px;
-  border: 0;
-  color: white;
-  line-height: 40px;
   padding: 5px 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #333;
+  line-height: 40px;
+  color: white;
   margin-bottom: 20px;
 
   &:last-of-type {
@@ -73,13 +73,13 @@ export const Input = styled.input`
 `;
 
 export const Submit = styled.button`
-  background: #e50914;
+  padding: 16px;
+  border: 0;
+  margin: 24px 0 12px;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  margin: 24px 0 12px;
-  padding: 16px;
-  border: 0;
+  background: #e50914;
   color: white;
   cursor: pointer;
 
