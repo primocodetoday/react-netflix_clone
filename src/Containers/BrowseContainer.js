@@ -1,20 +1,21 @@
 ﻿import React, { useContext, useState, useEffect } from 'react';
 import ProfilesSelection from 'containers/ProfilesSelection';
 import FirebaseContext from 'context/firebase';
-import { Loading, Header } from 'components';
+import { Loading, Header, Card } from 'components';
 import routes from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 
-const BrowseContainer = () => {
+const BrowseContainer = ({ slides }) => {
+  const [category, setCategory] = useState(() => 'series');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(() => false);
   const [search, setSearch] = useState(() => '');
+  const [slideRows, setSlideRows] = useState([]);
 
   const movie = useRandomMovie(requests.fetchNetflixOriginals);
 
   const { firebase } = useContext(FirebaseContext);
-
   const user = firebase.auth().currentUser || {};
 
   const truncate = (str, n) => {
@@ -27,6 +28,10 @@ const BrowseContainer = () => {
       setLoading(false);
     }, 2000);
   }, [profile.displayName]);
+
+  useEffect(() => {
+    setSlideRows(slides[category]);
+  }, [slides, category]);
 
   // TODO Add Gradient on Top and bottom
 
@@ -42,10 +47,20 @@ const BrowseContainer = () => {
               alt="Netflix"
             />
             <Header.MenuLink to="#">Home</Header.MenuLink>
-            <Header.MenuLink to="#">TV Shows</Header.MenuLink>
-            <Header.MenuLink to="#">Movies</Header.MenuLink>
-            <Header.MenuLink to="#">Latest</Header.MenuLink>
-            <Header.MenuLink to="#">My List</Header.MenuLink>
+            <Header.MenuLink
+              active={category === 'series' ? 'true' : 'false'}
+              onClick={() => setCategory('series')}
+              to="#"
+            >
+              TV Shows
+            </Header.MenuLink>
+            <Header.MenuLink
+              active={category === 'films' ? 'true' : 'false'}
+              onClick={() => setCategory('films')}
+              to="#"
+            >
+              Movies
+            </Header.MenuLink>
           </Header.Group>
           <Header.Group>
             <Header.Search search={search} setSearch={setSearch} />

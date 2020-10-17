@@ -1,5 +1,6 @@
 ﻿export { default as Accordion } from 'components/Accordion/Accordion';
 export { default as Banner } from 'components/Banner/Banner';
+export { default as Card } from 'components/Card/Card';
 export { default as CTAForm } from 'components/CTAForm/CTAForm';
 export { default as Form } from 'components/Form/Form';
 export { default as Footer } from 'components/Footer/Footer';
