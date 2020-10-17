@@ -3,17 +3,18 @@ import ProfilesSelection from 'containers/ProfilesSelection';
 import FirebaseContext from 'context/firebase';
 import { Loading, Header } from 'components';
 import routes from 'routes';
-import useMovie from 'hooks/useMovie';
+import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 
 const BrowseContainer = () => {
   const [profile, setProfile] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(() => false);
+  const [search, setSearch] = useState(() => '');
 
-  const movie = useMovie(requests.fetchNetflixOriginals);
+  const movie = useRandomMovie(requests.fetchNetflixOriginals);
 
   const { firebase } = useContext(FirebaseContext);
+
   const user = firebase.auth().currentUser || {};
 
   const truncate = (str, n) => {
@@ -74,6 +75,7 @@ const BrowseContainer = () => {
           <Header.Description>
             {truncate(movie?.overview, 150)}
           </Header.Description>
+          <Header.Play>Play</Header.Play>
         </Header.Feature>
       </Header>
     </>

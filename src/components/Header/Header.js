@@ -12,6 +12,7 @@ import {
   Logo,
   Link,
   Picture,
+  Play,
   Profile,
   Search,
   SearchIcon,
@@ -28,8 +29,20 @@ const Header = ({ bg, children, ...restProps }) => {
   );
 };
 
-Header.Top = function HeaderTop({ children, restProps }) {
-  return <Top {...restProps}>{children}</Top>;
+Header.Button = function HeaderButton({ children, ...restProps }) {
+  return <Button {...restProps}>{children}</Button>;
+};
+
+Header.Description = function HeaderDescription({ children, ...restProps }) {
+  return <Description {...restProps}>{children}</Description>;
+};
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
+};
+
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
+  return <Feature {...restProps}>{children}</Feature>;
 };
 
 Header.Group = function HeaderGroup({ children, restProps }) {
@@ -50,16 +63,8 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
   );
 };
 
-Header.Button = function HeaderButton({ children, ...restProps }) {
-  return <Button {...restProps}>{children}</Button>;
-};
-
-Header.Feature = function HeaderFeature({ children, ...restProps }) {
-  return <Feature {...restProps}>{children}</Feature>;
-};
-
-Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
-  return <Dropdown {...restProps}>{children}</Dropdown>;
+Header.Play = function HeaderPlay({ children, ...restProps }) {
+  return <Play {...restProps}>{children}</Play>;
 };
 
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
@@ -78,7 +83,7 @@ Header.Picture = function HeaderPicture({ src, ...restProps }) {
 };
 
 Header.Search = function HeaderSearch({ search, setSearch, ...restProps }) {
-  const [searchActive, setSearchActive] = useState(false);
+  const [searchActive, setSearchActive] = useState(() => false);
 
   return (
     <Search {...restProps}>
@@ -99,8 +104,8 @@ Header.Title = function HeaderTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Header.Description = function HeaderDescription({ children, ...restProps }) {
-  return <Description {...restProps}>{children}</Description>;
+Header.Top = function HeaderTop({ children, restProps }) {
+  return <Top {...restProps}>{children}</Top>;
 };
 
 Header.MenuLink = function HeaderMenuLink({ children, to, ...restProps }) {

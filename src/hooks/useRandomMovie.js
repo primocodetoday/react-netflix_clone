@@ -3,8 +3,8 @@ import instance from 'axios/init';
 
 // TODO Make this for many movies too
 
-const useMovie = (target) => {
-  const [movie, setMovie] = useState([]);
+const useRandomMovie = (target) => {
+  const [movie, setMovie] = useState(() => []);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,4 +25,4 @@ const useMovie = (target) => {
   return movie;
 };
 
-export default useMovie;
+export default useRandomMovie;

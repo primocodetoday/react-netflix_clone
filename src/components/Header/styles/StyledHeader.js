@@ -28,7 +28,7 @@ export const Container = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 56vw;
+  height: 58vw;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -65,6 +65,20 @@ export const Container = styled.div`
         background-image: none;
       }
     `}
+`;
+
+export const Feature = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  flex-direction: column;
+  align-items: normal;
+  width: 50%;
+
+  /* @media (max-width: 1100px) {
+    display: none;
+  } */
 `;
 
 export const Gradient = styled.div`
@@ -119,20 +133,6 @@ export const Logo = styled.img`
     width: 88.8px;
     height: 24px;
   }
-`;
-
-export const Feature = styled.div`
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 4%;
-  flex-direction: column;
-  align-items: normal;
-  width: 50%;
-
-  /* @media (max-width: 1100px) {
-    display: none;
-  } */
 `;
 
 export const Title = styled.h1`
@@ -221,6 +221,26 @@ export const Dropdown = styled.div`
     margin-left: 10px;
     margin-bottom: 0;
     margin-top: 0;
+  }
+`;
+
+export const Play = styled.button`
+  max-width: 130px;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  background-color: rgba(51, 51, 51, 0.5);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover {
+    color: #000;
+    background-color: #e6e6e6;
   }
 `;
 
