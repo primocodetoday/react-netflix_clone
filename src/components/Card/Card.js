@@ -9,12 +9,13 @@ import {
   Meta,
   Item,
   Poster,
+  Entities,
 } from './styles/StyledCard';
 
 export const FeatureContext = createContext();
 
 const Card = ({ children, ...restProps }) => {
-  const [showFeature, setShowFeature] = useState(() => false);
+  const [showFeature, setShowFeature] = useState(false);
   const [itemFeature, setItemFeature] = useState({});
 
   return (
@@ -40,6 +41,10 @@ Card.SubTitle = function CardSubtitle({ children, ...restProps }) {
 
 Card.Text = function CardText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>;
+};
+
+Card.Entities = function CardEntities({ children, ...restProps }) {
+  return <Entities {...restProps}>{children}</Entities>;
 };
 
 Card.Meta = function CardMeta({ children, ...restProps }) {

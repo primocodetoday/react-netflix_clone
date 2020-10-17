@@ -7,7 +7,7 @@ import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 
 const BrowseContainer = ({ slides }) => {
-  const [category, setCategory] = useState(() => 'series');
+  const [category, setCategory] = useState('series');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(() => false);
   const [search, setSearch] = useState(() => '');
@@ -93,6 +93,27 @@ const BrowseContainer = ({ slides }) => {
           <Header.Play>Play</Header.Play>
         </Header.Feature>
       </Header>
+      <Card.Row>
+        {slideRows.map((slideItem) => (
+          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+            <Card.Title>{slideItem.title}</Card.Title>
+            <Card.Entities>
+              {slideItem.data.map((item) => (
+                <Card.Item key={item.docId} item={item}>
+                  <Card.Poster
+                    src={`/assets/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+                  />
+                  <Card.Meta>
+                    <Card.SubTitle>{item.title}</Card.SubTitle>
+                    <Card.Text>{item.description}</Card.Text>
+                  </Card.Meta>
+                  {}
+                </Card.Item>
+              ))}
+            </Card.Entities>
+          </Card>
+        ))}
+      </Card.Row>
     </>
   ) : (
     <ProfilesSelection user={user} setProfile={setProfile} />
