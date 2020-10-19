@@ -107,10 +107,12 @@ const BrowseContainer = ({ slides }) => {
                     <Card.SubTitle>{item.title}</Card.SubTitle>
                     <Card.Text>{item.description}</Card.Text>
                   </Card.Meta>
-                  {}
                 </Card.Item>
               ))}
             </Card.Entities>
+            <Card.Feature category={category}>
+              <p>Hello</p>
+            </Card.Feature>
           </Card>
         ))}
       </Card.Row>

@@ -10,6 +10,12 @@ import {
   Item,
   Poster,
   Entities,
+  Feature,
+  Content,
+  FeatureTitle,
+  FeatureClose,
+  FeatureText,
+  Maturity,
 } from './styles/StyledCard';
 
 export const FeatureContext = createContext();
@@ -49,6 +55,37 @@ Card.Entities = function CardEntities({ children, ...restProps }) {
 
 Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
+};
+
+Card.Feature = function CardFeature({ children, category, ...restProps }) {
+  const { showFeature, itemFeature, setShowFeature } = useContext(
+    FeatureContext,
+  );
+
+  return showFeature ? (
+    <Feature
+      src={`assets/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
+      {...restProps}
+    >
+      <Content>
+        <FeatureTitle>{itemFeature.title}</FeatureTitle>
+        <FeatureText>{itemFeature.description}</FeatureText>
+        <FeatureClose onClick={() => setShowFeature(false)}>
+          <img src="assets/icons/close.png" alt="close" />
+        </FeatureClose>
+        <Row margin="30px 0" flexDirection="row" alignItems="center">
+          <Maturity rating={itemFeature.maturity}>
+            {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
+          </Maturity>
+          <FeatureText fontWeight="bold">
+            {itemFeature.genre.charAt(0).toUpperCase() +
+              itemFeature.genre.slice(1)}
+          </FeatureText>
+        </Row>
+        {children}
+      </Content>
+    </Feature>
+  ) : null;
 };
 
 Card.Item = function CardItem({ item, children, ...restProps }) {
