@@ -160,7 +160,7 @@ export const Item = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
   margin-right: 5px;
   cursor: pointer;
 

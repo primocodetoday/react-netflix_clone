@@ -1,33 +1,20 @@
-﻿import React, { useContext, useState, useEffect } from 'react';
-import ProfilesSelection from 'containers/ProfilesSelection';
-import FirebaseContext from 'context/firebase';
-import { Loading, Header, Card } from 'components';
+﻿import React, { useState, useEffect } from 'react';
+import { Header, Card } from 'components';
 import routes from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
+import FooterSection from 'containers/FooterSection';
 
-const BrowseContainer = ({ slides }) => {
+const BrowseContainer = ({ slides, user, handleSignOut }) => {
   const [category, setCategory] = useState('series');
-  const [profile, setProfile] = useState({});
-  const [loading, setLoading] = useState(() => false);
   const [search, setSearch] = useState(() => '');
   const [slideRows, setSlideRows] = useState([]);
 
   const movie = useRandomMovie(requests.fetchNetflixOriginals);
 
-  const { firebase } = useContext(FirebaseContext);
-  const user = firebase.auth().currentUser || {};
-
   const truncate = (str, n) => {
     return str?.length > n ? `${str.substr(0, n - 1)}...` : str;
   };
-
-  // loading profile imitation
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, [profile.displayName]);
 
   useEffect(() => {
     setSlideRows(slides[category]);
@@ -35,9 +22,8 @@ const BrowseContainer = ({ slides }) => {
 
   // TODO Add Gradient on Top and bottom
 
-  return profile.displayName ? (
+  return (
     <>
-      {loading ? <Loading src="1" /> : <Loading.ReleaseBody />}
       <Header bg={movie?.backdrop_path}>
         <Header.Top>
           <Header.Group>
@@ -72,10 +58,7 @@ const BrowseContainer = ({ slides }) => {
                   <Header.MenuLink to="#">{user.displayName}</Header.MenuLink>
                 </Header.Group>
                 <Header.Group>
-                  <Header.MenuLink
-                    to="#"
-                    onClick={() => firebase.auth().signOut()}
-                  >
+                  <Header.MenuLink to="#" onClick={() => handleSignOut()}>
                     Sign out
                   </Header.MenuLink>
                 </Header.Group>
@@ -116,9 +99,8 @@ const BrowseContainer = ({ slides }) => {
           </Card>
         ))}
       </Card.Row>
+      <FooterSection />
     </>
-  ) : (
-    <ProfilesSelection user={user} setProfile={setProfile} />
   );
 };
 
