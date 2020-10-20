@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "firebase": "^7.22.0",
+    "fuse.js": "^6.4.2",
     "movie-trailer": "^2.0.6",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",

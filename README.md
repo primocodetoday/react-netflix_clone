@@ -6,10 +6,9 @@
 
 <!-- </h1> -->
 
-<h2 align="center"> 🔥 Netflix clone v1.0🔥</h2>
+<h2 align="center"> 🔥 Netflix clone v1.2🔥</h2>
 
-<h3 align="center">
-Netflix clone app</h3>
+<h3 align="center"> Netflix clone app </h3>
 
 <!-- <p align="center">
   <a >
@@ -27,9 +26,11 @@ Netflix clone app</h3>
 
 | Main Tech | React                                             |
 | --------- | --------------------------------------------------|
-| Addons    | axios, react-youtube, movie-trailer               |
-| Styles    | SCSS, BEM                                         |
-| Code      | ES6+, Hooks, PropTypes, eslint(airbnb), stylelint |
+| Patterns  | Compound components                               |
+| Addons    | axios, react-youtube, movie-trailer, fuse         |
+| Styles    | Styled-Components                                 |
+| Backend   | Firebase Auth                                     |
+| Code      | ES6+, Hooks, eslint(airbnb), stylelint            |
 
 ## Screenshots 📺
 

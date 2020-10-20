@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { Header, Card, Player } from 'components';
 import routes from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
@@ -8,6 +9,7 @@ import FooterSection from 'containers/FooterSection';
 const BrowseContainer = ({ slides, user, handleSignOut }) => {
   const [category, setCategory] = useState('series');
   const [search, setSearch] = useState(() => '');
+
   const [slideRows, setSlideRows] = useState([]);
 
   const movie = useRandomMovie(requests.fetchNetflixOriginals);
@@ -19,6 +21,19 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre'],
+    });
+    const results = fuse.search(search).map(({ item }) => item);
+
+    if (slideRows.length > 0 && search.length > 3 && results.length > 0) {
+      setSlideRows(results);
+    } else {
+      setSlideRows(slides[category]);
+    }
+  }, [search]);
 
   // TODO Add Gradient on Top and bottom
 
