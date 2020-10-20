@@ -7,4 +7,5 @@ export { default as Footer } from 'components/Footer/Footer';
 export { default as Header } from 'components/Header/Header';
 export { default as Jumbotron } from 'components/Jumbotron/Jumbotron';
 export { default as Loading } from 'components/Loading/Loading';
+export { default as Player } from 'components/Player/Player';
 export { default as Profiles } from 'components/Profiles/Profiles';

@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
-import { Header, Card } from 'components';
+import { Header, Card, Player } from 'components';
 import routes from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
@@ -94,7 +94,12 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
               ))}
             </Card.Entities>
             <Card.Feature category={category}>
-              <p>Hello</p>
+              <Player>
+                <Player>
+                  <Player.Button />
+                  <Player.Video src="/videos/bunny.mp4" />
+                </Player>
+              </Player>
             </Card.Feature>
           </Card>
         ))}

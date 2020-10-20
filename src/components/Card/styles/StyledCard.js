@@ -13,7 +13,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   > ${Title} {
     @media (max-width: 1000px) {
@@ -43,7 +43,12 @@ export const Row = styled.div`
   flex-direction: ${({ flexDirection }) =>
     flexDirection === 'row' ? 'row' : 'column'};
   align-items: ${({ alignItems }) => alignItems || `center`};
+  padding: 10px 56px;
   margin: ${({ margin }) => margin || `0`};
+
+  @media (max-width: 1000px) {
+    padding: 10px 30px;
+  }
 
   > ${Container}:first-of-type {
     @media (min-width: 1100px) {
@@ -79,6 +84,7 @@ export const Feature = styled.div`
   position: relative;
   flex-direction: row;
   height: 360px;
+  margin: 10px 0px;
   background: url(${({ src }) => src});
   background-size: contain;
   background-position-x: right;
@@ -154,15 +160,20 @@ export const Meta = styled.div`
 export const Entities = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Item = styled.div`
   display: flex;
-  position: relative;
   flex-direction: column;
   transition: transform 0.3s;
   margin-right: 5px;
   cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0px;
+  }
 
   &:hover {
     z-index: 99;
@@ -173,22 +184,6 @@ export const Item = styled.div`
     &:hover ${Meta}, &:hover ${Text}, &:hover ${SubTitle} {
       display: block;
       z-index: 100;
-    }
-  }
-
-  &:first-of-type {
-    margin-left: 56px;
-
-    @media (max-width: 1000px) {
-      margin-left: 30px;
-    }
-  }
-
-  &:last-of-type {
-    margin-right: 56px;
-
-    @media (max-width: 1000px) {
-      margin-right: 30px;
     }
   }
 `;
