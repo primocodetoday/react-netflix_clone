@@ -36,7 +36,7 @@ As I gain new knowledge in programming, I would like it to be as close to the or
 	- [x] Browse Page
 	- [x] Player
 	- [ ] Tests
- - [ ] Ver 1.6
+ - [ ] Ver 1.4
 	- [ ]  Data from MovieDB
 	- [ ] Extended Profiles Page
 	- [ ] My List functionality
@@ -45,7 +45,7 @@ As I gain new knowledge in programming, I would like it to be as close to the or
 
 ### Tech/framework used 🔧
 
- | Main Tech | React |
+| Main Tech | React |
 |--|--|
 | Pattern | Compound components |
 | Addons |  axios, react-youtube, movie-trailer, fuse |
@@ -55,6 +55,8 @@ As I gain new knowledge in programming, I would like it to be as close to the or
 
 
 ### Screenshots 📺
+
+Ver 1.2
 
  <p align="center">
 <img src="https://i.imgur.com/38kWkE3.png" alt="Screenshot">
