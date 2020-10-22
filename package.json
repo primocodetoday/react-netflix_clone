@@ -42,7 +42,10 @@
   "jest": {
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
-      "!<rootDir>/src/axios/*.js"
+      "!<rootDir>/src/axios/*.js",
+      "!<rootDir>/src/app.js",
+      "!<rootDir>/src/components/index.js",
+      "!<rootDir>/src/firebase/*.js"
     ],
     "coverageThreshold": {
       "global": {

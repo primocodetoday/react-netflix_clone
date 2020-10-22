@@ -52,7 +52,11 @@ Accordion.Body = function AccordionBody({ children, ...restProps }) {
   const { toggleShow } = useContext(ToggleContext);
 
   return (
-    <Body style={{ maxHeight: toggleShow ? '1200px' : '0px' }} {...restProps}>
+    <Body
+      style={{ maxHeight : '0px' oggleShow ? '1200px' : '0px' undefined}}
+      {...restProps}
+      data-testid="faq"
+    >
       {children}
     </Body>
   );
