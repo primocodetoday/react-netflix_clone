@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import faqsData from 'constants/faqsData.json';
 import { Accordion } from 'components';
 
-describe('<Accordion />', () => {
-  it('renders the <Accordion /> with populated data', () => {
+describe('<Accordion /> renders properly', () => {
+  it('with populated data', () => {
     const { container, getByText } = render(
       <Accordion>
         <Accordion.Title>Frequently Asked Questions</Accordion.Title>

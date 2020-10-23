@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Accordion /> renders the <Accordion /> with populated data 1`] = `
+exports[`<Accordion /> renders properly with populated data 1`] = `
 <div
   class="StyledAccordion__Container-k9hf5e-0 jwBtHb"
 >

@@ -2,8 +2,8 @@
 import { render } from '@testing-library/react';
 import { Footer } from 'components';
 
-describe('Footer />', () => {
-  it('renders the Footer with data', () => {
+describe('<Footer /> renders properly', () => {
+  it('with data', () => {
     const { container, getByText } = render(
       <Footer>
         <Footer.Title>Questions?</Footer.Title>

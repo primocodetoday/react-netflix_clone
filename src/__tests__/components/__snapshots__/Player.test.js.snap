@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player /> renders the Player 1`] = `
+exports[`Player /> renders properly with toggle Play 1`] = `
 <div
   class="StyledPlayer__Container-sc-1per7rp-0"
 >

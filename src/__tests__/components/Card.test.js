@@ -35,8 +35,8 @@ const slideRows = [
   },
 ];
 
-describe('Card renders properly', () => {
-  it('Renders Card with data', () => {
+describe('<Card/> renders properly', () => {
+  it('with data', () => {
     const { container, getByText } = render(
       <Card.Row>
         {slideRows.map((slideItem) => (
@@ -78,7 +78,7 @@ describe('Card renders properly', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('Renders Card and toggle feature', () => {
+  it('with data and toggle feature', () => {
     const { container, queryByText, getByTestId, getByAltText } = render(
       <Card.Row>
         {slideRows.map((slideItem) => (

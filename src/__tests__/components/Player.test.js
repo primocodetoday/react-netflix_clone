@@ -4,8 +4,8 @@ import { render, fireEvent } from '@testing-library/react';
 
 import { Player } from 'components';
 
-describe('Player />', () => {
-  it('renders the Player', () => {
+describe('Player /> renders properly', () => {
+  it('with toggle Play', () => {
     const { container, getByText, queryByTestId } = render(
       <Player>
         <Player.Button />
