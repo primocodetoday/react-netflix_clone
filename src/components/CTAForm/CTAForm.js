@@ -1,12 +1,12 @@
 ﻿import React from 'react';
-import { Container, Text, Input, Button } from './styles/StyledCTAForm';
+import { Container, Content, Input, Button } from './styles/StyledCTAForm';
 
 const CTAForm = ({ children, restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
 CTAForm.Text = function CTAFormText({ children, ...restProps }) {
-  return <Text {...restProps}>{children}</Text>;
+  return <Content {...restProps}>{children}</Content>;
 };
 
 CTAForm.Input = function CTAFormInput({ children, ...restProps }) {

@@ -8,9 +8,12 @@ import {
 
 const Loading = ({ src, ...restProps }) => {
   return (
-    <Spinner {...restProps}>
+    <Spinner {...restProps} data-testid="loading">
       <LockBody />
-      <Picture src={`/assets/images/profiles/${src}.png`} />
+      <Picture
+        src={`/assets/images/profiles/${src}.png`}
+        data-testid="loading-picture"
+      />
     </Spinner>
   );
 };

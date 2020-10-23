@@ -56,8 +56,7 @@
       }
     },
     "coverageReporters": [
-      "html",
-      "text"
+      "html"
     ]
   },
   "devDependencies": {
