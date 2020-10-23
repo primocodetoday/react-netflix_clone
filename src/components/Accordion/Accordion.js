@@ -53,7 +53,7 @@ Accordion.Body = function AccordionBody({ children, ...restProps }) {
 
   return (
     <Body
-      style={{ maxHeight : '0px' oggleShow ? '1200px' : '0px' undefined}}
+      style={{ maxHeight: toggleShow ? '1200px' : '0px' }}
       {...restProps}
       data-testid="faq"
     >

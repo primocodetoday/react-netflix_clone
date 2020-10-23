@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner/> render properly render components properly with children 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited movies
+  </h1>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`<Banner/> render properly renders the <Banner /> with just a sub-title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`<Banner/> render properly renders the <Banner /> with just a title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited films
+  </h1>
+</div>
+`;
+
+exports[`<Banner/> render properly with just a sub-title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`<Banner/> render properly with just a title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited films
+  </h1>
+</div>
+`;
+
+exports[`<Banner/> render properly with sub-components & children 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited movies
+  </h1>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`Banner render properly render components properly with children 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited movies
+  </h1>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`Banner render properly renders the <Feature /> with just a sub-title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h2
+    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+  >
+    Watch anywhere. Cancel at any time.
+  </h2>
+</div>
+`;
+
+exports[`Banner render properly renders the <Feature /> with just a title 1`] = `
+<div
+  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+>
+  <h1
+    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+  >
+    Unlimited films, TV programmes and more.
+  </h1>
+</div>
+`;
