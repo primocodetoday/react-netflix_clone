@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders properly with data 1`] = `
+<div
+  class="StyledFooter__Container-sc-1hptcbq-0 eiiqpZ"
+>
+  <div
+    class="StyledFooter__Title-sc-1hptcbq-5 uHgyO"
+  >
+    Questions?
+  </div>
+  <div
+    class="StyledFooter__Break-sc-1hptcbq-3 lldsVx"
+  />
+  <div
+    class="StyledFooter__Row-sc-1hptcbq-2 eJA-dWP"
+  >
+    <div
+      class="StyledFooter__Column-sc-1hptcbq-1 cGoXWq"
+    >
+      <a
+        class="StyledFooter__Link-sc-1hptcbq-4 eeXysR"
+        href="#"
+      >
+        FAQ
+      </a>
+    </div>
+  </div>
+  <p
+    class="StyledFooter__Text-sc-1hptcbq-6 cWeGfp"
+  >
+    Netflix Poland
+  </p>
+</div>
+`;

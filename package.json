@@ -13,14 +13,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^3.4.0",
     "react-youtube": "^7.11.3",
     "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "lint:css": "stylelint src/**/*.js"
   },
@@ -37,6 +37,26 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!<rootDir>/src/axios/*.js",
+      "!<rootDir>/src/app.js",
+      "!<rootDir>/src/components/index.js",
+      "!<rootDir>/src/firebase/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html"
     ]
   },
   "devDependencies": {
@@ -68,8 +88,7 @@
   "lint-staged": {
     "*.js": [
       "prettier --config .prettierrc --write",
-      "eslint --fix",
-      "stylelint --fix"
+      "eslint --fix"
     ]
   }
 }

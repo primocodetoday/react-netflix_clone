@@ -25,7 +25,7 @@ export const Input = styled.input`
   border: 0;
 `;
 
-export const Text = styled.h3`
+export const Content = styled.h3`
   font-size: 19.2px;
   padding: 0 10%;
   color: white;

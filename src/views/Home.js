@@ -3,7 +3,7 @@
 import StorySection from 'containers/StorySection';
 import FooterSection from 'containers/FooterSection';
 import HeaderSection from 'containers/HeaderSection';
-import FaqContainer from 'containers/FaqSection';
+import FaqContainer from 'containers/FaqContainer';
 import { CTAForm, Banner } from 'components';
 
 const Home = () => {

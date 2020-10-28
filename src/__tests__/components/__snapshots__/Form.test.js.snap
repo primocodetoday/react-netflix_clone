@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form/> renders properly with an error 1`] = `
+<div
+  class="StyledForm__Container-lxzb7x-0 iPaOuG"
+>
+  <div
+    class="StyledForm__Error-lxzb7x-1 fycGXr"
+  >
+    You name not match pattern
+  </div>
+  <button
+    class="StyledForm__Submit-lxzb7x-8 iNyBrA"
+    type="submit"
+  >
+    Sign In
+  </button>
+</div>
+`;
+
+exports[`<Form/> renders properly with data 1`] = `
+<div
+  class="StyledForm__Container-lxzb7x-0 iPaOuG"
+>
+  <h1
+    class="StyledForm__Title-lxzb7x-3 kcoXtS"
+  >
+    Sign
+  </h1>
+  <form
+    class="StyledForm__Base-lxzb7x-2 hUTmBx"
+  >
+    <input
+      class="StyledForm__Input-lxzb7x-7 hNDNrQ"
+      placeholder="First Name"
+    />
+    <button
+      class="StyledForm__Submit-lxzb7x-8 iNyBrA"
+      disabled=""
+      type="submit"
+    >
+      Sign Up
+    </button>
+    <p
+      class="StyledForm__Text-lxzb7x-4 iYsoVD"
+    >
+      Already a user? 
+    </p>
+    <p
+      class="StyledForm__TextSmall-lxzb7x-5 jnhySP"
+    >
+      This page is protected by Google
+    </p>
+  </form>
+</div>
+`;
