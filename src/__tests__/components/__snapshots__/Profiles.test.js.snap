@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profiles/> renders properly with data 1`] = `
+<div
+  class="StyledProfiles__Container-sc-5dr50d-0 UjZnw"
+>
+  <h1
+    class="StyledProfiles__Title-sc-5dr50d-4 iIRrSj"
+  >
+    Who's watching?
+  </h1>
+  <ul
+    class="StyledProfiles__List-sc-5dr50d-2 gcuNwP"
+  >
+    <li
+      class="StyledProfiles__Item-sc-5dr50d-5 jvRLON"
+    >
+      <img
+        class="StyledProfiles__Avatar-sc-5dr50d-1 kMpxeQ"
+        data-testid="profiles-avatar"
+        src="assets/images/profiles/assets/images/fake.png.png"
+      />
+      <img
+        class="StyledProfiles__Avatar-sc-5dr50d-1 kMpxeQ"
+        data-testid="profiles-loading"
+        src="assets/images/loading.gif"
+      />
+      <p
+        class="StyledProfiles__Name-sc-5dr50d-3 fFOHqO"
+      >
+        Sebastian
+      </p>
+    </li>
+  </ul>
+</div>
+`;
