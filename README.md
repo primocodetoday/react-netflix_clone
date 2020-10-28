@@ -52,6 +52,7 @@ As I gain new knowledge in programming, I would like it to be as close to the or
 | Styles | Styled-Components |
 | Backend | Firebase Auth |
 | Code | ES6+, Hooks, eslint(airbnb), stylelint |
+|Test | React Testing Library |
 
 
 ### Screenshots 📺
