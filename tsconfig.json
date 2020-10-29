@@ -27,7 +27,7 @@
     "baseUrl": "./src", /* This is where all your code is*/
   },
   "include": [
-    "src/**/*" // *** The files TypeScript should type check ***
+    "src/**/*"
   ],
   "exclude": ["node_modules", "build"] // *** The files to not type check ***
 }
