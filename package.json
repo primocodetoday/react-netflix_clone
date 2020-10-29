@@ -1,6 +1,6 @@
 {
   "name": "react-netflix_clone",
-  "version": "1.25",
+  "version": "1.25.0",
   "private": true,
   "dependencies": {
     "@types/react-router-dom": "^5.1.6",

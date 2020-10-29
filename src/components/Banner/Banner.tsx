@@ -8,15 +8,11 @@ interface Composition {
   SubTitle: React.FC<{children: string}>;
 }
 
-type ComponentProps = {
-  children: React.FC
-}
-
 type Props = {
   children: string
 }
 
-export const Banner: React.FC<ComponentProps> & Composition = ({ children, ...restProps }:ComponentProps) => {
+export const Banner: React.FC<{children: React.FC}> & Composition = ({ children, ...restProps }:{children: React.FC}) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
