@@ -29,19 +29,23 @@ As I gain new knowledge in programming, I would like it to be as close to the or
 ### Development Plan 📅
 
  - [x] Ver 1.0 
- - [ ] Ver 1.2
+ - [x] Ver 1.2
 	- [x] Home screen
 	- [x] Sign In, Sign Up
 	- [x] Profile Page
 	- [x] Browse Page
 	- [x] Player
-	- [ ] Tests
+- [x] Ver 1.25
+	- [x] Tests - Skipped
+ - [ ] Ver 1.3
+  - [ ] TypeScript & Tests
  - [ ] Ver 1.4
 	- [ ]  Data from MovieDB
 	- [ ] Extended Profiles Page
 	- [ ] My List functionality
 	- [ ] Cards strict like on NF
-	- [ ] Player strict like on NF
+	- [ ] Player strict like on NF 	
+	...further development
 
 ### Tech/framework used 🔧
 
