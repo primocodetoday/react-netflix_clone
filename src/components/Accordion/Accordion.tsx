@@ -1,4 +1,4 @@
-﻿import React, { useState, createContext, useContext } from 'react';
+﻿import React, { useState, useContext } from 'react';
 import {
   Title,
   Container,
@@ -9,9 +9,20 @@ import {
   Body,
 } from './styles/StyledAccordion';
 
-const ToggleContext = createContext();
+type ContexType = {
+  toggleShow: boolean,
+  setToggleShow: (value: boolean) => void
+}
 
-const Accordion = ({ children, ...restProps }) => {
+const ToggleContext = React.createContext<ContexType | undefined>(undefined);
+
+interface AccordionComposition {
+  Title: React.FC;
+  Item: React.FC
+  Header: React.FC
+}
+
+const Accordion: React.FC & AccordionComposition = ({ children, ...restProps }) => {
   return (
     <Container {...restProps}>
       <Inner>{children}</Inner>

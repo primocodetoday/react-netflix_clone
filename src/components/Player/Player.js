@@ -1,13 +1,6 @@
-﻿/* eslint-disable jsx-a11y/media-has-caption */
-import React, { createContext, useContext, useState } from 'react';
+﻿import React, { createContext, useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Container,
-  Overlay,
-  Inner,
-  Button,
-  Close,
-} from './styles/StyledPlayer';
+import { Container, Overlay, Inner, Button, Close } from './styles/StyledPlayer';
 
 export const PlayerContext = createContext();
 
@@ -26,11 +19,7 @@ Player.Video = function PlayerVideo({ src, ...restProps }) {
 
   return showPlayer
     ? ReactDOM.createPortal(
-        <Overlay
-          {...restProps}
-          onClick={() => setShowPlayer(false)}
-          data-testid="player"
-        >
+        <Overlay {...restProps} onClick={() => setShowPlayer(false)} data-testid="player">
           <Inner>
             <video id="netflix-player" controls>
               <source src={src} type="video/mp4" />
@@ -47,10 +36,7 @@ Player.Button = function PlayerButton({ ...restProps }) {
   const { setShowPlayer } = useContext(PlayerContext);
 
   return (
-    <Button
-      onClick={() => setShowPlayer((showPlayer) => !showPlayer)}
-      {...restProps}
-    >
+    <Button onClick={() => setShowPlayer((showPlayer) => !showPlayer)} {...restProps}>
       Play
     </Button>
   );

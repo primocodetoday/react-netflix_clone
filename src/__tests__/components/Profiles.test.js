@@ -12,11 +12,12 @@ describe('<Profiles/> renders properly', () => {
       <Profiles>
         <Profiles.Title>Who&apos;s watching?</Profiles.Title>
         <Profiles.List>
-          <Profiles.Item onClick={() => {}}>
-            <Profiles.Avatar
-              src="assets/images/fake.png"
-              data-testid="profiles-avatar"
-            />
+          <Profiles.Item
+            onClick={() => {
+              return console.log(`I'm working`);
+            }}
+          >
+            <Profiles.Avatar src="assets/images/fake.png" data-testid="profiles-avatar" />
             <Profiles.Avatar data-testid="profiles-loading" />
             <Profiles.Name>{user.displayName}</Profiles.Name>
           </Profiles.Item>
