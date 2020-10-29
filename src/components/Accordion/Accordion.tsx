@@ -26,7 +26,11 @@ interface AccordionComposition {
   Span: React.FC<SpanProps>
 }
 
-export const Accordion: React.FC & AccordionComposition = ({ children, ...restProps }) => {
+type ComponentProps = {
+  children: React.FC
+}
+
+export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({ children, ...restProps }: ComponentProps) => {
   return (
     <Container {...restProps}>
       <Inner>{children}</Inner>
