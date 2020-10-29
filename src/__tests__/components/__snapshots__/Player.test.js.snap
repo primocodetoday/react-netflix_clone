@@ -2,10 +2,10 @@
 
 exports[`Player /> renders properly with toggle Play 1`] = `
 <div
-  class="StyledPlayer__Container-sc-1per7rp-0"
+  class="StyledPlayer__Container-x6dpgp-0"
 >
   <button
-    class="StyledPlayer__Button-sc-1per7rp-4 jdUNwS"
+    class="StyledPlayer__Button-x6dpgp-4 dITxVl"
   >
     Play
   </button>

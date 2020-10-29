@@ -2,10 +2,10 @@
 
 exports[`<Banner/> render properly with just a sub-title 1`] = `
 <div
-  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+  class="StyledBanner__Container-fl6ry-0 gJbaqX"
 >
   <h2
-    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+    class="StyledBanner__SubTitle-fl6ry-2 jqWyBE"
   >
     Watch anywhere
   </h2>
@@ -14,10 +14,10 @@ exports[`<Banner/> render properly with just a sub-title 1`] = `
 
 exports[`<Banner/> render properly with just a title 1`] = `
 <div
-  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+  class="StyledBanner__Container-fl6ry-0 gJbaqX"
 >
   <h1
-    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+    class="StyledBanner__Title-fl6ry-1 hzQtlr"
   >
     Unlimited films
   </h1>
@@ -26,15 +26,15 @@ exports[`<Banner/> render properly with just a title 1`] = `
 
 exports[`<Banner/> render properly with sub-components & children 1`] = `
 <div
-  class="StyledBanner__Container-uh1t0q-0 bhoafB"
+  class="StyledBanner__Container-fl6ry-0 gJbaqX"
 >
   <h1
-    class="StyledBanner__Title-uh1t0q-1 bJJIed"
+    class="StyledBanner__Title-fl6ry-1 hzQtlr"
   >
     Unlimited movies
   </h1>
   <h2
-    class="StyledBanner__SubTitle-uh1t0q-2 iHrWra"
+    class="StyledBanner__SubTitle-fl6ry-2 jqWyBE"
   >
     Watch anywhere
   </h2>

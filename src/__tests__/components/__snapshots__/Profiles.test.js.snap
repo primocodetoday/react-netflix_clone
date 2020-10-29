@@ -2,31 +2,31 @@
 
 exports[`<Profiles/> renders properly with data 1`] = `
 <div
-  class="StyledProfiles__Container-sc-5dr50d-0 UjZnw"
+  class="StyledProfiles__Container-sc-160hihj-0 lnjiFq"
 >
   <h1
-    class="StyledProfiles__Title-sc-5dr50d-4 iIRrSj"
+    class="StyledProfiles__Title-sc-160hihj-4 lcsmBd"
   >
     Who's watching?
   </h1>
   <ul
-    class="StyledProfiles__List-sc-5dr50d-2 gcuNwP"
+    class="StyledProfiles__List-sc-160hihj-2 jGUxnt"
   >
     <li
-      class="StyledProfiles__Item-sc-5dr50d-5 jvRLON"
+      class="StyledProfiles__Item-sc-160hihj-5 hfZuKX"
     >
       <img
-        class="StyledProfiles__Avatar-sc-5dr50d-1 kMpxeQ"
+        class="StyledProfiles__Avatar-sc-160hihj-1 dwUAvy"
         data-testid="profiles-avatar"
         src="assets/images/profiles/assets/images/fake.png.png"
       />
       <img
-        class="StyledProfiles__Avatar-sc-5dr50d-1 kMpxeQ"
+        class="StyledProfiles__Avatar-sc-160hihj-1 dwUAvy"
         data-testid="profiles-loading"
         src="assets/images/loading.gif"
       />
       <p
-        class="StyledProfiles__Name-sc-5dr50d-3 fFOHqO"
+        class="StyledProfiles__Name-sc-160hihj-3 gJudKU"
       >
         Sebastian
       </p>
