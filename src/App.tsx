@@ -6,7 +6,7 @@ import { routes } from 'routes';
 import { IsUserLogged, ProtectedRoute } from 'helpers/routes';
 import useAuthListener from 'hooks/useAuthListener';
 
-const App = () => {
+export const App:React.FC = () => {
   const { user } = useAuthListener();
 
   return (
@@ -40,6 +40,4 @@ const App = () => {
       </IsUserLogged>
     </BrowserRouter>
   );
-};
-
-export default App;
+}

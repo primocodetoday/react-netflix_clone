@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from 'App';
+import {App} from 'App';
 import FirebaseContext from 'context/firebase';
 import firebase from 'firebase/init';
 import GlobalStyle from 'global-styles';
