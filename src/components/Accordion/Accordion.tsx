@@ -17,11 +17,9 @@ interface AccordionContexType {
 
 const AccordionContext = React.createContext<AccordionContexType | undefined>(undefined);
 
-type ProviderProps = {children: React.ReactNode}
-
 interface AccordionComposition {
   Title: React.FC<{children: string}>;
-  Item: React.FC<ProviderProps>;
+  Item: React.FC<{children: React.ReactNode}>;
   Header: React.FC<HeaderProps>;
   Body: React.FC<{children: React.ReactNode}>;
   Span: React.FC<{children: string}>
@@ -43,7 +41,7 @@ Accordion.Title = function AccordionTitle({ children, ...restProps }: {children:
   return <Title {...restProps}>{children}</Title>;
 };
 
-Accordion.Item = function AccordionItem({ children, ...restProps }: ProviderProps) {
+Accordion.Item = function AccordionItem({ children, ...restProps }: {children: React.ReactNode}) {
   const [toggleShow, setToggleShow] = React.useState(false);
 
   return (
