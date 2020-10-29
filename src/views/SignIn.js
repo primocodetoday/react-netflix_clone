@@ -1,12 +1,12 @@
 ﻿import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
-import HeaderSection from 'containers/HeaderSection';
-import FooterSection from 'containers/FooterSection';
+import { HeaderSection } from 'containers/HeaderSection';
+import { FooterSection } from 'containers/FooterSection';
 import { Form } from 'components';
-import routes from 'routes';
+import { routes } from 'routes';
 
-const SignIn = () => {
+export const SignIn = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
   const [emailAddress, setEmailAddress] = useState('');
@@ -59,8 +59,7 @@ const SignIn = () => {
             New to Netflix? <Form.Link to="signup">Sign up now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Google reCAPTCHA to ensure you&apos;re not
-            a bot. Learn more.
+            This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot. Learn more.
           </Form.TextSmall>
         </Form>
       </HeaderSection>
@@ -68,5 +67,3 @@ const SignIn = () => {
     </>
   );
 };
-
-export default SignIn;

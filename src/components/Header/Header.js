@@ -21,7 +21,7 @@ import {
   Title,
 } from './styles/StyledHeader';
 
-const Header = ({ bg, children, ...restProps }) => {
+export const Header = ({ bg, children, ...restProps }) => {
   return (
     <Container bg={bg} {...restProps}>
       {children}
@@ -72,14 +72,7 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
 };
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
-  return (
-    <Picture
-      {...restProps}
-      src={
-        src ? `assets/images/profiles/${src}.png` : `assets/images/loading.gif`
-      }
-    />
-  );
+  return <Picture {...restProps} src={src ? `assets/images/profiles/${src}.png` : `assets/images/loading.gif`} />;
 };
 
 Header.Search = function HeaderSearch({ search, setSearch, ...restProps }) {
@@ -115,5 +108,3 @@ Header.MenuLink = function HeaderMenuLink({ children, to, ...restProps }) {
     </Link>
   );
 };
-
-export default Header;

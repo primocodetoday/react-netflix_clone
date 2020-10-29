@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 import { Accordion } from 'components';
 import faqsData from 'constants/faqsData.json';
-import CtaContainer from './CtaContainer';
+import { CtaContainer } from './CtaContainer';
 
-const FaqContainer = () => {
+export const FaqContainer = () => {
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>
@@ -19,4 +19,3 @@ const FaqContainer = () => {
     </Accordion>
   );
 };
-export default FaqContainer;

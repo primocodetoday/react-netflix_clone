@@ -4,7 +4,7 @@ import jumboData from 'constants/jumboData.json';
 
 // TODO add download animation in mobile section of jumbotron
 
-const StorySection = () => {
+export const StorySection = () => {
   return (
     <>
       {jumboData.map((item) => (
@@ -23,14 +23,7 @@ const StorySection = () => {
                   top={item.animationParams.top}
                   left={item.animationParams.left}
                 >
-                  <Jumbotron.Video
-                    loop
-                    muted
-                    playinline
-                    autoPlay
-                    src={item.animation}
-                    type="video/m4v"
-                  />
+                  <Jumbotron.Video loop muted playinline autoPlay src={item.animation} type="video/m4v" />
                 </Jumbotron.Animation>
               )}
             </Jumbotron.CardAnimation>
@@ -40,5 +33,3 @@ const StorySection = () => {
     </>
   );
 };
-
-export default StorySection;

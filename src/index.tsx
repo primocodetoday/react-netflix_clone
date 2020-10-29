@@ -4,7 +4,6 @@ import App from 'App';
 import FirebaseContext from 'context/firebase';
 import firebase from 'firebase/init';
 import GlobalStyle from 'global-styles';
-// import * as serviceWorker from './serviceWorker';
 
 render(
   <React.StrictMode>

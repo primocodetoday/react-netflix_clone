@@ -1,12 +1,12 @@
 ﻿import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
-import HeaderSection from 'containers/HeaderSection';
-import FooterSection from 'containers/FooterSection';
+import { HeaderSection } from 'containers/HeaderSection';
+import { FooterSection } from 'containers/FooterSection';
 import { Form } from 'components';
-import routes from 'routes';
+import { routes } from 'routes';
 
-const SignUp = () => {
+export const SignUp = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
@@ -68,8 +68,7 @@ const SignUp = () => {
               Already a user? <Form.Link to="/signin">Sign in now.</Form.Link>
             </Form.Text>
             <Form.TextSmall>
-              This page is protected by Google reCAPTCHA to ensure you&apos;re
-              not a bot. Learn more.
+              This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot. Learn more.
             </Form.TextSmall>
           </Form.Base>
         </Form>
@@ -78,5 +77,3 @@ const SignUp = () => {
     </>
   );
 };
-
-export default SignUp;

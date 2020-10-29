@@ -20,14 +20,12 @@ import {
 
 export const FeatureContext = createContext();
 
-const Card = ({ children, ...restProps }) => {
+export const Card = ({ children, ...restProps }) => {
   const [showFeature, setShowFeature] = useState(false);
   const [itemFeature, setItemFeature] = useState({});
 
   return (
-    <FeatureContext.Provider
-      value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}
-    >
+    <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
       <Container {...restProps}>{children}</Container>
     </FeatureContext.Provider>
   );
@@ -58,15 +56,10 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
 };
 
 Card.Feature = function CardFeature({ children, category, ...restProps }) {
-  const { showFeature, itemFeature, setShowFeature } = useContext(
-    FeatureContext,
-  );
+  const { showFeature, itemFeature, setShowFeature } = useContext(FeatureContext);
 
   return showFeature ? (
-    <Feature
-      src={`assets/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
-      {...restProps}
-    >
+    <Feature src={`assets/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`} {...restProps}>
       <Content>
         <FeatureTitle>{itemFeature.title}</FeatureTitle>
         <FeatureText>{itemFeature.description}</FeatureText>
@@ -74,12 +67,9 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
           <img src="assets/icons/close.png" alt="close" />
         </FeatureClose>
         <Row margin="30px 0" flexDirection="row" alignItems="center">
-          <Maturity rating={itemFeature.maturity}>
-            {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
-          </Maturity>
+          <Maturity rating={itemFeature.maturity}>{itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}</Maturity>
           <FeatureText fontWeight="bold">
-            {itemFeature.genre.charAt(0).toUpperCase() +
-              itemFeature.genre.slice(1)}
+            {itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slice(1)}
           </FeatureText>
         </Row>
         {children}
@@ -107,5 +97,3 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
 Card.Poster = function CardPoster({ ...restProps }) {
   return <Poster {...restProps} />;
 };
-
-export default Card;

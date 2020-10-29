@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Home, Browse, SignIn, SignUp } from 'views';
 import 'normalize.css';
-import routes from 'routes';
+import { routes } from 'routes';
 import { IsUserLogged, ProtectedRoute } from 'helpers/routes';
 import useAuthListener from 'hooks/useAuthListener';
 

@@ -105,5 +105,3 @@ type SpanProps = {
 Accordion.Span = function AccordionSpan({ children, ...restProps }:SpanProps) {
   return <Span {...restProps}>{children}</Span>;
 };
-
-export default Accordion;

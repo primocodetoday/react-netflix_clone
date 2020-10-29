@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import { Header, Profiles } from 'components';
-import routes from 'routes';
+import { routes } from 'routes';
 
-const ProfilesSelection = ({ user, setProfile, setLoading }) => {
+export const ProfilesSelection = ({ user, setProfile, setLoading }) => {
   const handleProfileClick = () => {
     setProfile({
       displayName: user.displayName,
@@ -15,11 +15,7 @@ const ProfilesSelection = ({ user, setProfile, setLoading }) => {
     <>
       <Header isNotBrowse isProfiles>
         <Header.Top>
-          <Header.Logo
-            to={routes.home}
-            src="assets/images/Netflix_logo.png"
-            alt="Netflix"
-          />
+          <Header.Logo to={routes.home} src="assets/images/Netflix_logo.png" alt="Netflix" />
         </Header.Top>
       </Header>
       <Profiles>
@@ -34,5 +30,3 @@ const ProfilesSelection = ({ user, setProfile, setLoading }) => {
     </>
   );
 };
-
-export default ProfilesSelection;

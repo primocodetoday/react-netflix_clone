@@ -1,17 +1,7 @@
 ﻿import React from 'react';
-import {
-  Container,
-  Base,
-  Error,
-  Title,
-  Text,
-  TextSmall,
-  Link,
-  Input,
-  Submit,
-} from './styles/StyledForm';
+import { Container, Base, Error, Title, Text, TextSmall, Link, Input, Submit } from './styles/StyledForm';
 
-const Form = ({ children, ...restProps }) => {
+export const Form = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
@@ -46,5 +36,3 @@ Form.Input = function FormInput({ children, ...restProps }) {
 Form.Submit = function FormSubmit({ children, ...restProps }) {
   return <Submit {...restProps}>{children}</Submit>;
 };
-
-export default Form;

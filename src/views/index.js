@@ -1,4 +1,4 @@
-﻿export { default as Home } from 'views/Home';
-export { default as Browse } from 'views/Browse';
-export { default as SignIn } from 'views/SignIn';
-export { default as SignUp } from 'views/SignUp';
+﻿export { Home } from 'views/Home';
+export { Browse } from 'views/Browse';
+export { SignIn } from 'views/SignIn';
+export { SignUp } from 'views/SignUp';

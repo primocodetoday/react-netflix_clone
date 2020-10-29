@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Container, Content, Input, Button } from './styles/StyledCTAForm';
 
-const CTAForm = ({ children, restProps }) => {
+export const CTAForm = ({ children, restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
@@ -21,5 +21,3 @@ CTAForm.Button = function CTAFormButton({ children, ...restProps }) {
     </Button>
   );
 };
-
-export default CTAForm;

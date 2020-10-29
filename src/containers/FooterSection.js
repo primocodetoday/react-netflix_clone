@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Footer } from 'components';
 
-const FooterSection = () => {
+export const FooterSection = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Call 00 800 112 4392</Footer.Title>
@@ -38,5 +38,3 @@ const FooterSection = () => {
     </Footer>
   );
 };
-
-export default FooterSection;

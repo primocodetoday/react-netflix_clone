@@ -3,10 +3,10 @@ import { Loading } from 'components';
 import FirebaseContext from 'context/firebase';
 import useFirebaseContent from 'hooks/useFirebaseContent';
 import genreFilter from 'helpers/genreFilter';
-import BrowseContainer from 'containers/BrowseContainer';
-import ProfilesSelection from 'containers/ProfilesSelection';
+import { BrowseContainer } from 'containers/BrowseContainer';
+import { ProfilesSelection } from 'containers/ProfilesSelection';
 
-const Browse = () => {
+export const Browse = () => {
   const { series } = useFirebaseContent('series');
   const { films } = useFirebaseContent('films');
 
@@ -34,19 +34,9 @@ const Browse = () => {
   return profile.displayName ? (
     <>
       {loading ? <Loading src="1" /> : <Loading.ReleaseBody />}
-      <BrowseContainer
-        user={user}
-        slides={slides}
-        handleSignOut={handleSignOut}
-      />
+      <BrowseContainer user={user} slides={slides} handleSignOut={handleSignOut} />
     </>
   ) : (
-    <ProfilesSelection
-      user={user}
-      setProfile={setProfile}
-      setLoading={setLoading}
-    />
+    <ProfilesSelection user={user} setProfile={setProfile} setLoading={setLoading} />
   );
 };
-
-export default Browse;

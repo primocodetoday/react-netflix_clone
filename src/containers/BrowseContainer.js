@@ -1,12 +1,12 @@
 ﻿import React, { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Header, Card, Player } from 'components';
-import routes from 'routes';
+import { routes } from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
-import FooterSection from 'containers/FooterSection';
+import { FooterSection } from 'containers/FooterSection';
 
-const BrowseContainer = ({ slides, user, handleSignOut }) => {
+export const BrowseContainer = ({ slides, user, handleSignOut }) => {
   const [category, setCategory] = useState('series');
   const [search, setSearch] = useState(() => '');
 
@@ -42,11 +42,7 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
       <Header bg={movie?.backdrop_path}>
         <Header.Top>
           <Header.Group>
-            <Header.Logo
-              to={routes.home}
-              src="assets/images/Netflix_logo.png"
-              alt="Netflix"
-            />
+            <Header.Logo to={routes.home} src="assets/images/Netflix_logo.png" alt="Netflix" />
             <Header.MenuLink to="#">Home</Header.MenuLink>
             <Header.MenuLink
               active={category === 'series' ? 'true' : 'false'}
@@ -82,12 +78,8 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
           </Header.Group>
         </Header.Top>
         <Header.Feature>
-          <Header.Title>
-            {movie?.name || movie?.title || movie?.original_name}
-          </Header.Title>
-          <Header.Description>
-            {truncate(movie?.overview, 150)}
-          </Header.Description>
+          <Header.Title>{movie?.name || movie?.title || movie?.original_name}</Header.Title>
+          <Header.Description>{truncate(movie?.overview, 150)}</Header.Description>
           <Header.Play>Play</Header.Play>
         </Header.Feature>
       </Header>
@@ -98,9 +90,7 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
             <Card.Entities>
               {slideItem.data.map((item) => (
                 <Card.Item key={item.docId} item={item}>
-                  <Card.Poster
-                    src={`/assets/images/${category}/${item.genre}/${item.slug}/small.jpg`}
-                  />
+                  <Card.Poster src={`/assets/images/${category}/${item.genre}/${item.slug}/small.jpg`} />
                   <Card.Meta>
                     <Card.SubTitle>{item.title}</Card.SubTitle>
                     <Card.Text>{item.description}</Card.Text>
@@ -123,5 +113,3 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
     </>
   );
 };
-
-export default BrowseContainer;

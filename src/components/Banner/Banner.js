@@ -2,7 +2,7 @@
 
 import { Container, Title, SubTitle } from './styles/StyledBanner';
 
-const Banner = ({ children, ...restProps }) => {
+export const Banner = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
@@ -12,5 +12,3 @@ Banner.Title = function BannerTitle({ children, ...restProps }) {
 Banner.SubTitle = function BannerSubTitle({ children, ...restProps }) {
   return <SubTitle {...restProps}>{children}</SubTitle>;
 };
-
-export default Banner;

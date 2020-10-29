@@ -1,15 +1,7 @@
 ﻿import React from 'react';
-import {
-  Container,
-  Row,
-  Column,
-  Link,
-  Title,
-  Text,
-  Break,
-} from './styles/StyledFooter';
+import { Container, Row, Column, Link, Title, Text, Break } from './styles/StyledFooter';
 
-const Footer = ({ children, ...restProps }) => {
+export const Footer = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
@@ -36,5 +28,3 @@ Footer.Text = function FooterText({ children, ...restProps }) {
 Footer.Break = function FooterBreak({ children, ...restProps }) {
   return <Break {...restProps}>{children}</Break>;
 };
-
-export default Footer;
