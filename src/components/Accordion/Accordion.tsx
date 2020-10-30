@@ -1,35 +1,29 @@
 ﻿import React from 'react';
-import {
-  Title,
-  Container,
-  Inner,
-  Header,
-  Item,
-  Span,
-  Body,
-} from './styles/StyledAccordion';
-
+import { Title, Container, Inner, Header, Item, Span, Body } from './styles/StyledAccordion';
 
 interface AccordionContexType {
-  toggleShow: boolean,
-  setToggleShow: React.Dispatch<React.SetStateAction<boolean>>
+  toggleShow: boolean;
+  setToggleShow: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AccordionContext = React.createContext<AccordionContexType | undefined>(undefined);
 
 interface AccordionComposition {
-  Title: React.FC<{children: string}>;
-  Item: React.FC<{children: React.ReactNode}>;
+  Title: React.FC<{ children: string }>;
+  Item: React.FC<{ children: React.ReactNode }>;
   Header: React.FC<HeaderProps>;
-  Body: React.FC<{children: React.ReactNode}>;
-  Span: React.FC<{children: string}>
+  Body: React.FC<{ children: React.ReactNode }>;
+  Span: React.FC<{ children: string }>;
 }
 
 type ComponentProps = {
-  children: React.FC
-}
+  children: React.FC;
+};
 
-export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({ children, ...restProps }: ComponentProps) => {
+export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({
+  children,
+  ...restProps
+}: ComponentProps) => {
   return (
     <Container {...restProps}>
       <Inner>{children}</Inner>
@@ -37,11 +31,11 @@ export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({ chi
   );
 };
 
-Accordion.Title = function AccordionTitle({ children, ...restProps }: {children: string}) {
+Accordion.Title = function AccordionTitle({ children, ...restProps }: { children: string }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Accordion.Item = function AccordionItem({ children, ...restProps }: {children: React.ReactNode}) {
+Accordion.Item = function AccordionItem({ children, ...restProps }: { children: React.ReactNode }) {
   const [toggleShow, setToggleShow] = React.useState(false);
 
   return (
@@ -52,11 +46,11 @@ Accordion.Item = function AccordionItem({ children, ...restProps }: {children: R
 };
 
 type HeaderProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-Accordion.Header = function AccordionHeader ({ children, ...restProps }: HeaderProps) {
-  const {toggleShow, setToggleShow}= useAccordion()
+Accordion.Header = function AccordionHeader({ children, ...restProps }: HeaderProps) {
+  const { toggleShow, setToggleShow } = useAccordion();
 
   return (
     <Header onClick={() => setToggleShow(!toggleShow)} {...restProps}>
@@ -70,29 +64,24 @@ Accordion.Header = function AccordionHeader ({ children, ...restProps }: HeaderP
   );
 };
 
-
-Accordion.Body = function AccordionBody({ children, ...restProps }: {children: React.ReactNode}) {
-  const {toggleShow}= useAccordion()
+Accordion.Body = function AccordionBody({ children, ...restProps }: { children: React.ReactNode }) {
+  const { toggleShow } = useAccordion();
 
   return (
-    <Body
-      style={{ maxHeight: toggleShow ? '1200px' : '0px' }}
-      {...restProps}
-      data-testid="faq"
-    >
+    <Body style={{ maxHeight: toggleShow ? '1200px' : '0px' }} {...restProps} data-testid="faq">
       {children}
     </Body>
   );
 };
 
-Accordion.Span = function AccordionSpan({ children, ...restProps }:{children: string}) {
+Accordion.Span = function AccordionSpan({ children, ...restProps }: { children: string }) {
   return <Span {...restProps}>{children}</Span>;
 };
 
 export const useAccordion = (): AccordionContexType => {
-  const context = React.useContext(AccordionContext)
+  const context = React.useContext(AccordionContext);
   if (!context) {
-    throw new Error("This component must be used within a <Accordion> component.")
+    throw new Error('This component must be used within a <Accordion> component.');
   }
-  return context
-}
+  return context;
+};
