@@ -24,7 +24,13 @@ export const Button = styled(RouterLink)`
   }
 `;
 
-export const Container = styled.div`
+interface IStyledContainer {
+  bg: string
+  isNotBrowse: boolean
+  isProfiles: boolean
+}
+
+export const Container = styled.div<IStyledContainer>`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -158,11 +164,11 @@ export const Description = styled.p`
   font-weight: 600;
 `;
 
-export const Link = styled(RouterLink)`
+export const Link = styled(RouterLink)<{active: boolean}>`
   color: #e5e5e5;
   text-decoration: none;
   margin-left: 30px;
-  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  font-weight: ${({ active }) => (active ? '700' : 'normal')};
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.65);
   font-size: 14px;
 
@@ -178,7 +184,7 @@ export const Group = styled.div`
   align-items: center;
 `;
 
-export const Picture = styled.button`
+export const Picture = styled.button<{src: string}>`
   width: 32px;
   height: 32px;
   border: 0;
@@ -280,7 +286,7 @@ export const SearchIcon = styled.button`
     width: 16px;
   }
 `;
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<{active: boolean}>`
   background-color: #44444459;
   width: 0px;
   height: 30px;
