@@ -24,13 +24,7 @@ export const Button = styled(RouterLink)`
   }
 `;
 
-interface IStyledContainer {
-  bg: string
-  isNotBrowse: boolean
-  isProfiles: boolean
-}
-
-export const Container = styled.div<IStyledContainer>`
+export const Container = styled.div<{ bg: string; isNotBrowse: boolean; isProfiles: boolean }>`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -39,22 +33,16 @@ export const Container = styled.div<IStyledContainer>`
   background-position: center center;
   background-size: cover;
   background-image: ${({ bg }) =>
-    bg
-      ? `url(https://image.tmdb.org/t/p/original/${bg})`
-      : `url(assets/images/home-bg-large.jpg)`};
+    bg ? `url(https://image.tmdb.org/t/p/original/${bg})` : `url(assets/images/home-bg-large.jpg)`};
 
   @media (max-width: 1000px) {
     background-image: ${({ bg }) =>
-      bg
-        ? `url(https://image.tmdb.org/t/p/original/${bg})`
-        : `url(assets/images/home-bg-small.jpg)`};
+      bg ? `url(https://image.tmdb.org/t/p/original/${bg})` : `url(assets/images/home-bg-small.jpg)`};
   }
 
   @media (max-width: 1500px) {
     background-image: ${({ bg }) =>
-      bg
-        ? `url(https://image.tmdb.org/t/p/original/${bg})`
-        : `url(assets/images/home-bg-medium.jpg)`};
+      bg ? `url(https://image.tmdb.org/t/p/original/${bg})` : `url(assets/images/home-bg-medium.jpg)`};
   }
 
   ${({ isNotBrowse }) =>
@@ -94,12 +82,7 @@ export const Gradient = styled.div`
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0,
-    rgba(0, 0, 0, 0) 60%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
   color: white;
 `;
 
@@ -164,13 +147,14 @@ export const Description = styled.p`
   font-weight: 600;
 `;
 
-export const Link = styled(RouterLink)<{active: boolean}>`
+export const MenuLink = styled.p<{ active: boolean }>`
   color: #e5e5e5;
   text-decoration: none;
   margin-left: 30px;
   font-weight: ${({ active }) => (active ? '700' : 'normal')};
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.65);
   font-size: 14px;
+  cursor: pointer;
 
   &:hover {
     font-weight: bold;
@@ -184,7 +168,7 @@ export const Group = styled.div`
   align-items: center;
 `;
 
-export const Picture = styled.button<{src: string}>`
+export const Picture = styled.button<{ src: string }>`
   width: 32px;
   height: 32px;
   border: 0;
@@ -202,7 +186,7 @@ export const Dropdown = styled.div`
   background-color: black;
   padding: 10px;
 
-  ${Group}:last-of-type ${Link} {
+  ${Group}:last-of-type ${MenuLink} {
     cursor: pointer;
   }
 
@@ -213,7 +197,7 @@ export const Dropdown = styled.div`
       margin-bottom: 0;
     }
 
-    ${Link}, ${Picture} {
+    ${MenuLink}, ${Picture} {
       cursor: default;
     }
   }
@@ -286,7 +270,7 @@ export const SearchIcon = styled.button`
     width: 16px;
   }
 `;
-export const SearchInput = styled.input<{active: boolean}>`
+export const SearchInput = styled.input<{ active: boolean }>`
   background-color: #44444459;
   width: 0px;
   height: 30px;
