@@ -2,7 +2,7 @@
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
 import { HeaderSection } from 'containers/HeaderSection';
-import { FooterSection } from 'containers/FooterSection';
+import { FooterContainer } from 'containers/FooterContainer';
 import { Form } from 'components';
 import { routes } from 'routes';
 
@@ -63,7 +63,7 @@ export const SignIn = () => {
           </Form.TextSmall>
         </Form>
       </HeaderSection>
-      <FooterSection />
+      <FooterContainer />
     </>
   );
 };

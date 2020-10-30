@@ -1,6 +1,6 @@
 ﻿import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
  html,body {
     font-family: 'Inter', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -14,5 +14,3 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none
   }
   `;
-
-export default GlobalStyle;

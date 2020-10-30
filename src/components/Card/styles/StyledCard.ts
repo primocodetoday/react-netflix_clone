@@ -37,8 +37,13 @@ export const SubTitle = styled.p`
 `;
 
 // you can do this in this ways
+interface RowStyledProps {
+  flexDirection: "row" | "column";
+  alignItems: string;
+  margin: string
+}
 
-export const Row = styled.div`
+export const Row = styled.div<RowStyledProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) =>
     flexDirection === 'row' ? 'row' : 'column'};
@@ -67,7 +72,11 @@ export const Text = styled.p`
   user-select: none;
 `;
 
-export const FeatureText = styled.p`
+interface FeatureTextStyledProps {
+  fontWeight: "bold" | "normal"
+}
+
+export const FeatureText = styled.p<FeatureTextStyledProps>`
   margin: 0;
   color: white;
   font-size: 18px;
@@ -79,13 +88,17 @@ export const FeatureText = styled.p`
   }
 `;
 
-export const Feature = styled.div`
+interface FeatureStyledProps {
+  background: string
+}
+
+export const Feature = styled.div<FeatureStyledProps>`
   display: flex;
   position: relative;
   flex-direction: row;
   height: 360px;
   margin: 10px 0px;
-  background: url(${({ src }) => src});
+  background: url(${({ background }) => background});
   background-size: contain;
   background-position-x: right;
   background-repeat: no-repeat;
@@ -124,8 +137,11 @@ export const FeatureClose = styled.button`
     width: 24px;
   }
 `;
+interface MaturityStyledProps {
+  rating: number
+}
 
-export const Maturity = styled.div`
+export const Maturity = styled.div<MaturityStyledProps>`
   background-color: ${({ rating }) => (rating >= 15 ? 'red' : 'green')};
   border-radius: 15px;
   width: 20px;

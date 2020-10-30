@@ -4,7 +4,7 @@ import { Header, Card, Player } from 'components';
 import { routes } from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
-import { FooterSection } from 'containers/FooterSection';
+import { FooterContainer } from 'containers/FooterContainer';
 
 export const BrowseContainer = ({ slides, user, handleSignOut }) => {
   const [category, setCategory] = useState('series');
@@ -109,7 +109,7 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
           </Card>
         ))}
       </Card.Row>
-      <FooterSection />
+      <FooterContainer />
     </>
   );
 };

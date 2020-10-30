@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { CTAForm } from 'components';
 
-export const CtaContainer = () => {
+export const CtaContainer:React.FC = () => {
   return (
     <CTAForm>
       <CTAForm.Text>Ready to watch? Enter your email to create or restart your membership.</CTAForm.Text>

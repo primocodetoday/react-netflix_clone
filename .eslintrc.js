@@ -12,7 +12,7 @@
     },
   },
   rules: {
-    'react/prop-types': 1,
+    'react/prop-types': [1, { ignore: ['children'] }],
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
   },

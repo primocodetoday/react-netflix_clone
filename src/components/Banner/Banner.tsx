@@ -1,4 +1,4 @@
-﻿import React, { ReactNode } from 'react';
+﻿import React from 'react';
 
 import { Container, Title, SubTitle } from './styles/StyledBanner';
 
@@ -8,19 +8,15 @@ interface Composition {
   SubTitle: React.FC<{children: string}>;
 }
 
-type ComponentProps = {
-  children: ReactNode
-}
-
 type Props = {
   children: string
 }
 
-export const Banner: React.FC<ComponentProps> & Composition = ({ children, ...restProps }:ComponentProps) => {
+export const Banner: React.FC<{children: React.FC}> & Composition = ({ children, ...restProps }:{children: React.FC}) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Banner.Title = function BannerTitle({ children, ...restProps }: Props) {
+Banner.Title = function BannerTitle ({ children, ...restProps }: Props) {
   return <Title {...restProps}>{children}</Title>;
 };
 Banner.SubTitle = function BannerSubTitle({ children, ...restProps }: Props) {

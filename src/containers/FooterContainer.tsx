@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Footer } from 'components';
 
-export const FooterSection = () => {
+export const FooterContainer: React.FC = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Call 00 800 112 4392</Footer.Title>

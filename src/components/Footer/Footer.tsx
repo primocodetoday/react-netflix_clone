@@ -1,7 +1,16 @@
 ﻿import React from 'react';
 import { Container, Row, Column, Link, Title, Text, Break } from './styles/StyledFooter';
 
-export const Footer = ({ children, ...restProps }) => {
+interface IFooterComposition {
+  Row: React.FC;
+  Column: React.FC;
+  Link: React.FC<ILinkProps>;
+  Title: React.FC;
+  Text: React.FC;
+  Break: React.FC;
+}
+
+export const Footer: React.FC & IFooterComposition = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
@@ -13,7 +22,12 @@ Footer.Column = function FooterColumn({ children, ...restProps }) {
   return <Column {...restProps}>{children}</Column>;
 };
 
-Footer.Link = function FooterLink({ children, ...restProps }) {
+type ILinkProps = {
+  href: string;
+  children: string;
+};
+
+Footer.Link = function FooterLink({ children, ...restProps }: ILinkProps) {
   return <Link {...restProps}>{children}</Link>;
 };
 
