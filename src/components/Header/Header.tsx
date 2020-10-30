@@ -24,17 +24,17 @@ import {
 interface HeaderComposition {
   Button: React.FC<IButtonProps>;
   Description: React.FC<IDescriptionProps>;
-  Dropdown: React.FC<IReactChildrenProps>;
-  Feature: React.FC<IReactChildrenProps>;
-  Group: React.FC<IReactChildrenProps>;
+  Dropdown: React.FC;
+  Feature: React.FC;
+  Group: React.FC;
   Gradient: React.FC;
   Logo: React.FC<ILogoProps>;
   Play: React.FC<IPlayProps>;
-  Profile: React.FC<IReactChildrenProps>;
+  Profile: React.FC;
   Picture: React.FC<IPictureProps>;
   Search: React.FC<ISearchProps>;
   Title: React.FC<{ children: string }>;
-  Top: React.FC<IReactChildrenProps>;
+  Top: React.FC;
   MenuLink: React.FC<IMenuLinkProps>;
 }
 
@@ -42,10 +42,6 @@ interface ComponentProps {
   bg: string;
   isNotBrowse: boolean;
   isProfiles: boolean;
-  children: React.ReactNode;
-}
-
-interface IReactChildrenProps {
   children: React.ReactNode;
 }
 
@@ -85,15 +81,15 @@ Header.Description = function HeaderDescription({ children, ...restProps }: IDes
   return <Description {...restProps}>{children}</Description>;
 };
 
-Header.Dropdown = function HeaderDropdown({ children, ...restProps }: IReactChildrenProps) {
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
   return <Dropdown {...restProps}>{children}</Dropdown>;
 };
 
-Header.Feature = function HeaderFeature({ children, ...restProps }: IReactChildrenProps) {
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
   return <Feature {...restProps}>{children}</Feature>;
 };
 
-Header.Group = function HeaderGroup({ children, ...restProps }: IReactChildrenProps) {
+Header.Group = function HeaderGroup({ children, ...restProps }) {
   return <Group {...restProps}>{children}</Group>;
 };
 
@@ -123,7 +119,7 @@ Header.Play = function HeaderPlay({ children, ...restProps }: IPlayProps) {
   return <Play {...restProps}>{children}</Play>;
 };
 
-Header.Profile = function HeaderProfile({ children, ...restProps }: IReactChildrenProps) {
+Header.Profile = function HeaderProfile({ children, ...restProps }) {
   return <Profile {...restProps}>{children}</Profile>;
 };
 
@@ -162,7 +158,7 @@ Header.Title = function HeaderTitle({ children, ...restProps }: { children: stri
   return <Title {...restProps}>{children}</Title>;
 };
 
-Header.Top = function HeaderTop({ children, ...restProps }: IReactChildrenProps) {
+Header.Top = function HeaderTop({ children, ...restProps }) {
   return <Top {...restProps}>{children}</Top>;
 };
 
