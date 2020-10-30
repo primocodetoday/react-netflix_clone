@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 
 import { StorySection } from 'containers/StorySection';
-import { FooterSection } from 'containers/FooterSection';
+import { FooterContainer } from 'containers/FooterContainer';
 import { HeaderSection } from 'containers/HeaderSection';
 import { FaqContainer } from 'containers/FaqContainer';
 import { CTAForm, Banner } from 'components';
@@ -22,7 +22,7 @@ export const Home = () => {
       </HeaderSection>
       <StorySection />
       <FaqContainer />
-      <FooterSection />
+      <FooterContainer />
     </>
   );
 };
