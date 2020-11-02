@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import faqsData from 'constants/faqsData.json';
+import faqsData from 'constants/faqsData';
 import { Accordion } from 'components';
 
 describe('<Accordion /> renders properly', () => {

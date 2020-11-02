@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Jumbotron } from 'components';
-import jumboData from 'constants/jumboData.json';
+import { jumboData } from 'constants/jumboData';
 
 // TODO add download animation in mobile section of jumbotron
 

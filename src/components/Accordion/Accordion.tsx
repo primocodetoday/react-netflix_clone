@@ -17,7 +17,7 @@ interface AccordionComposition {
 }
 
 type ComponentProps = {
-  children: React.FC;
+  children: React.ReactNode;
 };
 
 export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({
@@ -46,7 +46,7 @@ Accordion.Item = function AccordionItem({ children, ...restProps }: { children: 
 };
 
 type HeaderProps = {
-  children: React.ReactNode;
+  children: string;
 };
 
 Accordion.Header = function AccordionHeader({ children, ...restProps }: HeaderProps) {

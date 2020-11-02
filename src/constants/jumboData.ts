@@ -1,0 +1,56 @@
+﻿type JumboProps = {
+  id: number;
+  title: string;
+  subTitle: string;
+  image: string;
+  alt: string;
+  animation?: string;
+  animationParams?: {
+    maxHeight: string;
+    maxWidth: string;
+    top: string;
+    left: string;
+  };
+  direction: 'row' | 'row-reverse';
+}[];
+
+export const jumboData: JumboProps = [
+  {
+    id: 1,
+    title: 'Enjoy on your TV.',
+    subTitle: 'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
+    image: 'assets/images/tv.png',
+    alt: 'Tiger King on Netflix',
+    animation: 'assets/animations/video-tv.m4v',
+    animationParams: {
+      maxHeight: '54',
+      maxWidth: '73',
+      top: '46',
+      left: '50',
+    },
+    direction: 'row',
+  },
+  {
+    id: 2,
+    title: 'Download your shows to watch offline.',
+    subTitle: 'Save your favorites easily and always have something to watch.',
+    image: 'assets/images/mobile.jpg',
+    alt: 'Watch on mobile',
+    direction: 'row-reverse',
+  },
+  {
+    id: 3,
+    title: 'Watch everywhere.',
+    subTitle: 'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
+    image: 'assets/images/device-pile.png',
+    alt: 'Money Heist on Netflix',
+    animation: 'assets/animations/video-devices.m4v',
+    animationParams: {
+      maxHeight: '47',
+      maxWidth: '63',
+      top: '34',
+      left: '50',
+    },
+    direction: 'row',
+  },
+];

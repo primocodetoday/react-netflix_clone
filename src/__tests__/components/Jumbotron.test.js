@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Jumbotron } from 'components';
-import jumboData from 'constants/jumboData.json';
+import jumboData from 'constants/jumboData';
 
 jest.mock('react-router-dom');
 
