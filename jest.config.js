@@ -14,7 +14,7 @@
     },
   },
 
-  coverageReporters: 'html',
+  coverageReporters: ['html', 'json-summary'],
 
   coveragePathIgnorePatterns: ['node_modules', 'coverage', 'jest.config.js'],
 
