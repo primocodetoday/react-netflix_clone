@@ -5,7 +5,7 @@ exports[`Player /> renders properly with toggle Play 1`] = `
   class="StyledPlayer__Container-x6dpgp-0"
 >
   <button
-    class="StyledPlayer__Button-x6dpgp-4 dITxVl"
+    class="StyledPlayer__Button-x6dpgp-4 ikBqTI"
   >
     Play
   </button>

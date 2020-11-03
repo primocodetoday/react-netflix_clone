@@ -1,6 +1,6 @@
 ﻿import React, { createContext, useState } from 'react';
 import { IRowStyledProps } from './styles/StyledCard';
-
+import { IDataProps } from 'views/Browse';
 import {
   Container,
   Row,
@@ -19,19 +19,20 @@ import {
   Maturity,
 } from './styles/StyledCard';
 
-interface IItemFeatureProps {
-  slug?: string;
-  title?: string;
-  genre?: string;
-  maturity?: number;
-  description?: string;
-}
+const defaultItemFeature: IDataProps = {
+  id: 'loading',
+  slug: 'loading...',
+  title: 'loading...',
+  genre: 'loading...',
+  maturity: 18,
+  description: 'loading...',
+};
 
 interface IFeatureContextType {
   showFeature: boolean;
   setShowFeature: React.Dispatch<React.SetStateAction<boolean>>;
-  itemFeature: IItemFeatureProps;
-  setItemFeature: React.Dispatch<React.SetStateAction<IItemFeatureProps>>;
+  itemFeature: IDataProps;
+  setItemFeature: React.Dispatch<React.SetStateAction<IDataProps>>;
 }
 
 export const FeatureContext = createContext<IFeatureContextType | null>(null);
@@ -54,7 +55,7 @@ type ComponentProps = {
 
 export const Card: React.FC<ComponentProps> & ICardComposition = ({ children, ...restProps }) => {
   const [showFeature, setShowFeature] = useState(false);
-  const [itemFeature, setItemFeature] = useState({});
+  const [itemFeature, setItemFeature] = useState(defaultItemFeature);
 
   return (
     <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
@@ -117,7 +118,7 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
 };
 
 interface IItemProps {
-  item: IItemFeatureProps;
+  item: IDataProps;
   children: React.ReactNode;
 }
 

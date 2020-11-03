@@ -2,11 +2,11 @@
 
 exports[`<Loading/> renders properly with Spinner 1`] = `
 <div
-  class="sc-bdnylx fkQpjt"
+  class="sc-bdfBwQ tAQoF"
   data-testid="loading"
 >
   <img
-    class="sc-gtssRu kRnqZW"
+    class="sc-gsTCUz hUwiKL"
     data-testid="loading-picture"
     src="/assets/images/profiles/assets/images/fake.png.png"
   />

@@ -6,17 +6,47 @@ import genreFilter from 'helpers/genreFilter';
 import { BrowseContainer } from 'containers/BrowseContainer';
 import { ProfilesSelection } from 'containers/ProfilesSelection';
 
-export const Browse = () => {
-  const { series } = useFirebaseContent('series');
-  const { films } = useFirebaseContent('films');
+export interface IDataProps {
+  id: string;
+  slug: string;
+  title: string;
+  genre: string;
+  maturity: number;
+  description: string;
+}
+
+export interface ISeriesProps {
+  series?: Array<IDataProps>;
+}
+export interface IFilmsProps {
+  films?: Array<IDataProps>;
+}
+
+export interface ISlides {
+  series?: {
+    title: string;
+    data: Array<IDataProps>;
+  };
+  films?: {
+    title: string;
+    data: Array<IDataProps>;
+  };
+}
+
+export const Browse: React.FC = () => {
+  const { series }: ISeriesProps = useFirebaseContent('series');
+  const { films }: IFilmsProps = useFirebaseContent('films');
 
   const [loading, setLoading] = useState(() => false);
 
   const slides = genreFilter({ series, films });
 
+  console.log(slides);
+
   const [profile, setProfile] = useState({});
 
   const { firebase } = useContext(FirebaseContext);
+
   const user = firebase.auth().currentUser || {};
 
   const handleSignOut = () => {

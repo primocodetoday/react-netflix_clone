@@ -5,8 +5,13 @@ import { routes } from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 import { FooterContainer } from 'containers/FooterContainer';
+import { ISlides } from 'views/Browse';
 
-export const BrowseContainer = ({ slides, user, handleSignOut }) => {
+interface IBrowserContainer extends React.ReactElement {
+  slides: ISlides;
+}
+
+export const BrowseContainer: React.FC = ({ slides, user, handleSignOut }): IBrowserContainer => {
   const [category, setCategory] = useState('series');
   const [search, setSearch] = useState(() => '');
 

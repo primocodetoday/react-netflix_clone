@@ -1,9 +1,11 @@
-﻿const genreFilter = ({ series, films } = []) => {
+﻿import { IDataProps } from 'views/Browse';
+
+const genreFilter = ({ series, films }) => {
   return {
     series: [
       {
         title: 'Documentaries',
-        data: series?.filter((item) => item.genre === 'documentaries'),
+        data: series?.filter((item: IDataProps) => item.genre === 'documentaries'),
       },
       {
         title: 'Comedies',
