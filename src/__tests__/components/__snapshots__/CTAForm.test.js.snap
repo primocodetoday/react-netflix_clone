@@ -2,19 +2,19 @@
 
 exports[`<CTAForm/> renders properly with data 1`] = `
 <div
-  class="StyledCTAForm__Container-lhj0cj-0 iGKUBm"
+  class="StyledCTAForm__Container-lhj0cj-0 cBMAWP"
 >
   <h3
-    class="StyledCTAForm__Content-lhj0cj-2 cqPkNC"
+    class="StyledCTAForm__Content-lhj0cj-2 jwsvuj"
   >
     TestString
   </h3>
   <input
-    class="StyledCTAForm__Input-lhj0cj-1 ivSdyD"
+    class="StyledCTAForm__Input-lhj0cj-1 encAPy"
     placeholder="Email address"
   />
   <button
-    class="StyledCTAForm__Button-lhj0cj-3 kGPSoS"
+    class="StyledCTAForm__Button-lhj0cj-3 eLPgHr"
   >
     TRY 30 DAYS FREE
     <img

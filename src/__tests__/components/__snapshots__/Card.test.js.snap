@@ -2,36 +2,36 @@
 
 exports[`<Card/> renders properly with data 1`] = `
 <div
-  class="StyledCard__Row-hps8jg-3 hjgqoB"
+  class="StyledCard__Row-hps8jg-3 iIFgYk"
 >
   <div
-    class="StyledCard__Container-hps8jg-1 drgibA"
+    class="StyledCard__Container-hps8jg-1 jAtWLl"
   >
     <h1
-      class="StyledCard__Title-hps8jg-0 yRFff"
+      class="StyledCard__Title-hps8jg-0 huGgJC"
     >
       Documentaries
     </h1>
     <div
-      class="StyledCard__Entities-hps8jg-12 kyUuO"
+      class="StyledCard__Entities-hps8jg-12 bthcHf"
     >
       <div
-        class="StyledCard__Item-hps8jg-13 bXzEiB"
+        class="StyledCard__Item-hps8jg-13 eDEJgY"
       >
         <img
-          class="StyledCard__Poster-hps8jg-14 drMxSq"
+          class="StyledCard__Poster-hps8jg-14 kvpoOr"
           src="/assets/images/series/documentaries/tiger-king/small.jpg"
         />
         <div
-          class="StyledCard__Meta-hps8jg-11 nDVlq"
+          class="StyledCard__Meta-hps8jg-11 eJvBAL"
         >
           <p
-            class="StyledCard__SubTitle-hps8jg-2 fYFwXG"
+            class="StyledCard__SubTitle-hps8jg-2 cWATBP"
           >
             Tiger King
           </p>
           <p
-            class="StyledCard__Text-hps8jg-4 eSKAHC"
+            class="StyledCard__Text-hps8jg-4 aTwsP"
           >
             Tiger King description
           </p>
@@ -40,33 +40,33 @@ exports[`<Card/> renders properly with data 1`] = `
     </div>
   </div>
   <div
-    class="StyledCard__Container-hps8jg-1 drgibA"
+    class="StyledCard__Container-hps8jg-1 jAtWLl"
   >
     <h1
-      class="StyledCard__Title-hps8jg-0 yRFff"
+      class="StyledCard__Title-hps8jg-0 huGgJC"
     >
       Feel Good
     </h1>
     <div
-      class="StyledCard__Entities-hps8jg-12 kyUuO"
+      class="StyledCard__Entities-hps8jg-12 bthcHf"
     >
       <div
-        class="StyledCard__Item-hps8jg-13 bXzEiB"
+        class="StyledCard__Item-hps8jg-13 eDEJgY"
       >
         <img
-          class="StyledCard__Poster-hps8jg-14 drMxSq"
+          class="StyledCard__Poster-hps8jg-14 kvpoOr"
           src="/assets/images/series/feel-good/juno/small.jpg"
         />
         <div
-          class="StyledCard__Meta-hps8jg-11 nDVlq"
+          class="StyledCard__Meta-hps8jg-11 eJvBAL"
         >
           <p
-            class="StyledCard__SubTitle-hps8jg-2 fYFwXG"
+            class="StyledCard__SubTitle-hps8jg-2 cWATBP"
           >
             Juno
           </p>
           <p
-            class="StyledCard__Text-hps8jg-4 eSKAHC"
+            class="StyledCard__Text-hps8jg-4 aTwsP"
           >
             Juno description
           </p>
@@ -79,37 +79,37 @@ exports[`<Card/> renders properly with data 1`] = `
 
 exports[`<Card/> renders properly with data and toggle feature 1`] = `
 <div
-  class="StyledCard__Row-hps8jg-3 hjgqoB"
+  class="StyledCard__Row-hps8jg-3 iIFgYk"
 >
   <div
-    class="StyledCard__Container-hps8jg-1 drgibA"
+    class="StyledCard__Container-hps8jg-1 jAtWLl"
   >
     <h1
-      class="StyledCard__Title-hps8jg-0 yRFff"
+      class="StyledCard__Title-hps8jg-0 huGgJC"
     >
       Documentaries
     </h1>
     <div
-      class="StyledCard__Entities-hps8jg-12 kyUuO"
+      class="StyledCard__Entities-hps8jg-12 bthcHf"
     >
       <div
-        class="StyledCard__Item-hps8jg-13 bXzEiB"
+        class="StyledCard__Item-hps8jg-13 eDEJgY"
         data-testid="tiger-king-feature"
       >
         <img
-          class="StyledCard__Poster-hps8jg-14 drMxSq"
+          class="StyledCard__Poster-hps8jg-14 kvpoOr"
           src="/assets/images/series/documentaries/tiger-king/small.jpg"
         />
         <div
-          class="StyledCard__Meta-hps8jg-11 nDVlq"
+          class="StyledCard__Meta-hps8jg-11 eJvBAL"
         >
           <p
-            class="StyledCard__SubTitle-hps8jg-2 fYFwXG"
+            class="StyledCard__SubTitle-hps8jg-2 cWATBP"
           >
             Tiger King
           </p>
           <p
-            class="StyledCard__Text-hps8jg-4 eSKAHC"
+            class="StyledCard__Text-hps8jg-4 aTwsP"
           >
             Tiger King description
           </p>
@@ -118,34 +118,34 @@ exports[`<Card/> renders properly with data and toggle feature 1`] = `
     </div>
   </div>
   <div
-    class="StyledCard__Container-hps8jg-1 drgibA"
+    class="StyledCard__Container-hps8jg-1 jAtWLl"
   >
     <h1
-      class="StyledCard__Title-hps8jg-0 yRFff"
+      class="StyledCard__Title-hps8jg-0 huGgJC"
     >
       Feel Good
     </h1>
     <div
-      class="StyledCard__Entities-hps8jg-12 kyUuO"
+      class="StyledCard__Entities-hps8jg-12 bthcHf"
     >
       <div
-        class="StyledCard__Item-hps8jg-13 bXzEiB"
+        class="StyledCard__Item-hps8jg-13 eDEJgY"
         data-testid="juno-feature"
       >
         <img
-          class="StyledCard__Poster-hps8jg-14 drMxSq"
+          class="StyledCard__Poster-hps8jg-14 kvpoOr"
           src="/assets/images/series/feel-good/juno/small.jpg"
         />
         <div
-          class="StyledCard__Meta-hps8jg-11 nDVlq"
+          class="StyledCard__Meta-hps8jg-11 eJvBAL"
         >
           <p
-            class="StyledCard__SubTitle-hps8jg-2 fYFwXG"
+            class="StyledCard__SubTitle-hps8jg-2 cWATBP"
           >
             Juno
           </p>
           <p
-            class="StyledCard__Text-hps8jg-4 eSKAHC"
+            class="StyledCard__Text-hps8jg-4 aTwsP"
           >
             Juno description
           </p>

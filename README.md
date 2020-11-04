@@ -51,7 +51,7 @@ Ver 1.2
 
 | Statements                                                            | Branches                                                         | Functions                                                            | Lines                                                            |
 | --------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-49.35%25-red.svg) | ![Branches](https://img.shields.io/badge/Coverage-22.35%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-26.97%25-red.svg) | ![Lines](https://img.shields.io/badge/Coverage-50.11%25-red.svg) |
+| ![Statements](https://img.shields.io/badge/Coverage-51.43%25-red.svg) | ![Branches](https://img.shields.io/badge/Coverage-25%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-30.51%25-red.svg) | ![Lines](https://img.shields.io/badge/Coverage-52.24%25-red.svg) |
 
 <br>
 

@@ -1,8 +1,24 @@
 ﻿import React from 'react';
 import { Title, Container, Inner, Header, Item, Span, Body } from './styles/StyledAccordion';
-import { AccordionComposition, AccordionContexType, ComponentProps, HeaderProps } from './Accordion.interface';
+
+interface AccordionContexType {
+  toggleShow: boolean;
+  setToggleShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const AccordionContext = React.createContext<AccordionContexType | undefined>(undefined);
+
+interface AccordionComposition {
+  Title: React.FC<{ children: string }>;
+  Item: React.FC<{ children: React.ReactNode }>;
+  Header: React.FC<HeaderProps>;
+  Body: React.FC<{ children: React.ReactNode }>;
+  Span: React.FC<{ children: string }>;
+}
+
+type ComponentProps = {
+  children: React.ReactNode;
+};
 
 export const Accordion: React.FC<ComponentProps> & AccordionComposition = ({
   children,
@@ -27,6 +43,10 @@ Accordion.Item = function AccordionItem({ children, ...restProps }: { children: 
       <Item {...restProps}>{children}</Item>
     </AccordionContext.Provider>
   );
+};
+
+type HeaderProps = {
+  children: string;
 };
 
 Accordion.Header = function AccordionHeader({ children, ...restProps }: HeaderProps) {
