@@ -24,7 +24,13 @@ export const Button = styled(RouterLink)`
   }
 `;
 
-export const Container = styled.div<{ bg: string; isNotBrowse: boolean; isProfiles: boolean }>`
+interface IContainerProps {
+  bg: string | undefined;
+  isNotBrowse: boolean | undefined;
+  isProfiles: boolean | undefined;
+}
+
+export const Container = styled.div<IContainerProps>`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -75,7 +81,7 @@ export const Feature = styled.div`
   } */
 `;
 
-export const Gradient = styled.div`
+export const Shadow = styled.div`
   position: absolute;
   top: 0;
   right: 0;

@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+// import { Link as RouterLink } from 'react-router-dom';
 import { useScroll } from 'hooks/useScroll';
+import { IHeaderProps } from './Header.interface';
 
 import {
   Button,
@@ -8,9 +9,9 @@ import {
   Description,
   Dropdown,
   Feature,
-  Gradient,
+  Shadow,
   Group,
-  Logo,
+  // Logo,
   MenuLink,
   Picture,
   Play,
@@ -28,31 +29,24 @@ interface HeaderComposition {
   Dropdown: React.FC;
   Feature: React.FC;
   Group: React.FC;
-  Gradient: React.FC;
-  Logo: React.FC<ILogoProps>;
+  Shadow: React.FC;
   Play: React.FC<IPlayProps>;
   Profile: React.FC;
   Picture: React.FC<IPictureProps>;
   Search: React.FC<ISearchProps>;
   Title: React.FC<{ children: string }>;
-  Top: React.FC;
+  TopFrame: React.FC;
   MenuLink: React.FC<IMenuLinkProps>;
+  // Logo: React.FC;
 }
 
-interface ComponentProps {
-  bg: string;
-  isNotBrowse: boolean;
-  isProfiles: boolean;
-  children: React.ReactNode;
-}
-
-export const Header: React.FC<ComponentProps> & HeaderComposition = ({
+export const Header: React.FC<IHeaderProps> & HeaderComposition = ({
   bg,
   isNotBrowse,
   isProfiles,
   children,
   ...restProps
-}: ComponentProps) => {
+}: IHeaderProps) => {
   return (
     <Container bg={bg} isNotBrowse={isNotBrowse} isProfiles={isProfiles} {...restProps}>
       {children}
@@ -78,7 +72,7 @@ interface IDescriptionProps {
   to: string;
 }
 
-Header.Description = function HeaderDescription({ children, ...restProps }: IDescriptionProps) {
+Header.Description = function HeaderDescription({ children, ...restProps }) {
   return <Description {...restProps}>{children}</Description>;
 };
 
@@ -96,21 +90,17 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
 
 // TODO Correct this gradient
 
-Header.Gradient = function HeaderGradient({ ...restProps }) {
-  return <Gradient {...restProps} />;
+Header.Shadow = function HeaderGShadow({ ...restProps }) {
+  return <Shadow {...restProps} />;
 };
 
-interface ILogoProps {
-  to: string;
-}
-
-Header.Logo = function HeaderLogo({ to, ...restProps }: ILogoProps) {
-  return (
-    <RouterLink to={to}>
-      <Logo {...restProps} />
-    </RouterLink>
-  );
-};
+// Header.Logo = function HeaderLogo({ to, ...restProps }) {
+//   return (
+//     <RouterLink to={to}>
+//       <Logo {...restProps} />
+//     </RouterLink>
+//   );
+// };
 
 interface IPlayProps {
   children: string;
@@ -159,7 +149,7 @@ Header.Title = function HeaderTitle({ children, ...restProps }: { children: stri
   return <Title {...restProps}>{children}</Title>;
 };
 
-Header.Top = function HeaderTop({ children, ...restProps }) {
+Header.TopFrame = function HeaderTop({ children, ...restProps }) {
   const [show, handleShow] = useState(false);
 
   const position = useScroll();
