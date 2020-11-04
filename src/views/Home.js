@@ -2,14 +2,14 @@
 
 import { StorySection } from 'containers/StorySection';
 import { FooterContainer } from 'containers/FooterContainer';
-import { HeaderSection } from 'containers/HeaderSection';
+import { HeaderContainer } from 'containers/HeaderContainer';
 import { FaqContainer } from 'containers/FaqContainer';
 import { CTAForm, Banner } from 'components';
 
 export const Home = () => {
   return (
     <>
-      <HeaderSection>
+      <HeaderContainer>
         <Banner>
           <Banner.Title>Unlimited movies, TV shows, and more.</Banner.Title>
           <Banner.SubTitle>Watch anywhere. Cancel anytime.</Banner.SubTitle>
@@ -19,7 +19,7 @@ export const Home = () => {
             <CTAForm.Button>TRY 30 DAYS FREE</CTAForm.Button>
           </CTAForm>
         </Banner>
-      </HeaderSection>
+      </HeaderContainer>
       <StorySection />
       <FaqContainer />
       <FooterContainer />

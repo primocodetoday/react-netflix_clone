@@ -1,7 +1,7 @@
 ﻿import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
-import { HeaderSection } from 'containers/HeaderSection';
+import { HeaderContainer } from 'containers/HeaderContainer';
 import { FooterContainer } from 'containers/FooterContainer';
 import { Form } from 'components';
 import { routes } from 'routes';
@@ -39,7 +39,7 @@ export const SignUp = () => {
 
   return (
     <>
-      <HeaderSection>
+      <HeaderContainer>
         <Form>
           <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
@@ -72,7 +72,7 @@ export const SignUp = () => {
             </Form.TextSmall>
           </Form.Base>
         </Form>
-      </HeaderSection>
+      </HeaderContainer>
       <FooterContainer />
     </>
   );

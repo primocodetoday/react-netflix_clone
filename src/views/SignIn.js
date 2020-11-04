@@ -1,7 +1,7 @@
 ﻿import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import FirebaseContext from 'context/firebase';
-import { HeaderSection } from 'containers/HeaderSection';
+import { HeaderContainer } from 'containers/HeaderContainer';
 import { FooterContainer } from 'containers/FooterContainer';
 import { Form } from 'components';
 import { routes } from 'routes';
@@ -34,7 +34,7 @@ export const SignIn = () => {
 
   return (
     <>
-      <HeaderSection>
+      <HeaderContainer>
         <Form>
           <Form.Title>Sign In</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
@@ -62,7 +62,7 @@ export const SignIn = () => {
             This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot. Learn more.
           </Form.TextSmall>
         </Form>
-      </HeaderSection>
+      </HeaderContainer>
       <FooterContainer />
     </>
   );

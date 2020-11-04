@@ -86,23 +86,31 @@ export const Gradient = styled.div`
   color: white;
 `;
 
-export const Top = styled.div`
+export interface ITopFrame {
+  show: boolean;
+}
+
+export const TopFrame = styled.div<ITopFrame>`
   display: flex;
+  position: sticky;
+  top: 0;
   z-index: 3;
   justify-content: space-between;
   align-items: center;
-  margin: 0 56px;
-  padding-top: 20px;
+  padding: 10px 20px;
+  background: ${({ show }) =>
+    show ? 'rgb(20, 20, 20)' : 'linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))'};
   transition: all 0.5s;
   transition-timing-function: ease-in;
 
   a {
     display: flex;
   }
+`;
 
-  @media (max-width: 1000px) {
-    margin: 0 30px;
-  }
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Logo = styled.img`
@@ -162,11 +170,6 @@ export const MenuLink = styled.p<{ active: boolean }>`
 `;
 
 // TODO make burger for small screens
-
-export const Group = styled.div`
-  display: flex;
-  align-items: center;
-`;
 
 export const Picture = styled.button<{ src: string }>`
   width: 32px;

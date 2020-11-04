@@ -1,5 +1,6 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useScroll } from 'hooks/useScroll';
 
 import {
   Button,
@@ -17,7 +18,7 @@ import {
   Search,
   SearchIcon,
   SearchInput,
-  Top,
+  TopFrame,
   Title,
 } from './styles/StyledHeader';
 
@@ -159,7 +160,21 @@ Header.Title = function HeaderTitle({ children, ...restProps }: { children: stri
 };
 
 Header.Top = function HeaderTop({ children, ...restProps }) {
-  return <Top {...restProps}>{children}</Top>;
+  const [show, handleShow] = useState(false);
+
+  const position = useScroll();
+
+  useEffect(() => {
+    if (position > 5) {
+      handleShow(true);
+    } else handleShow(false);
+  }, [position]);
+
+  return (
+    <TopFrame show={show} {...restProps}>
+      {children}
+    </TopFrame>
+  );
 };
 
 interface IMenuLinkProps {
