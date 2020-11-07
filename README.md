@@ -77,5 +77,5 @@ Ver 1.2
 
 ### Live 📍
 
-[https://primnfclone.netlify.app](https://primnfclone.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8736051-bc66-4d3d-87a5-0974ab5a54f3/deploy-status)]https://primnfclone.netlify.app)
 
