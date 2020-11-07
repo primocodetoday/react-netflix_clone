@@ -21,6 +21,7 @@ const useFirebaseContent = (target) => {
       .catch(({ message }) => {
         console.log(message);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { [target]: content };
