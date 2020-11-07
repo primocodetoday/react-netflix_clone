@@ -33,6 +33,7 @@ const BrowseContainer = ({ slides, user, handleSignOut }) => {
     } else {
       setSlideRows(slides[category]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   // TODO Add Gradient on Top and bottom
