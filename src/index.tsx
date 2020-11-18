@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { App } from 'App';
 import FirebaseContext from 'context/firebase';
-import firebase from 'firebase';
+import { fireApp as firebase } from 'firebase/init';
 import { GlobalStyle } from 'theme/global-styles';
 
 render(

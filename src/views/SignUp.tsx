@@ -22,8 +22,9 @@ export const SignUp: React.FC = () => {
 
   const handleSignUp = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(firebase);
 
-    firebase!
+    firebase
       .auth()
       .createUserWithEmailAndPassword(emailAddress, password)
       .then((result) => result!.user!.updateProfile({ displayName: firstName }))
