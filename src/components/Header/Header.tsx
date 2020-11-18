@@ -1,5 +1,6 @@
-﻿import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+﻿import React, { useState, useEffect } from 'react';
+import { Link as RouterLink, LinkProps } from 'react-router-dom';
+import { useScroll } from 'hooks/useScroll';
 
 import {
   Button,
@@ -7,7 +8,6 @@ import {
   Description,
   Dropdown,
   Feature,
-  Gradient,
   Group,
   Logo,
   MenuLink,
@@ -17,7 +17,7 @@ import {
   Search,
   SearchIcon,
   SearchInput,
-  Top,
+  TopFrame,
   Title,
 } from './styles/StyledHeader';
 
@@ -27,32 +27,33 @@ interface HeaderComposition {
   Dropdown: React.FC;
   Feature: React.FC;
   Group: React.FC;
-  Gradient: React.FC;
-  Logo: React.FC<ILogoProps>;
   Play: React.FC<IPlayProps>;
   Profile: React.FC;
   Picture: React.FC<IPictureProps>;
   Search: React.FC<ISearchProps>;
   Title: React.FC<{ children: string }>;
-  Top: React.FC;
+  TopFrame: React.FC<TopFrameProps>;
   MenuLink: React.FC<IMenuLinkProps>;
+  Logo: React.FC<LogoProps>;
 }
 
-interface ComponentProps {
-  bg: string;
-  isNotBrowse: boolean;
-  isProfiles: boolean;
+export interface IHeaderProps {
+  bg?: string;
+  isNotBrowse?: boolean;
+  isProfiles?: boolean;
   children: React.ReactNode;
 }
 
-export const Header: React.FC<ComponentProps> & HeaderComposition = ({
+export const Header: React.FC<IHeaderProps> & HeaderComposition = ({
   bg,
-  isNotBrowse,
-  isProfiles,
+  isNotBrowse = false,
+  isProfiles = false,
   children,
   ...restProps
-}: ComponentProps) => {
+}: IHeaderProps) => {
   return (
+    // isNotBrowse - default background
+    // is Profile - no background
     <Container bg={bg} isNotBrowse={isNotBrowse} isProfiles={isProfiles} {...restProps}>
       {children}
     </Container>
@@ -77,7 +78,7 @@ interface IDescriptionProps {
   to: string;
 }
 
-Header.Description = function HeaderDescription({ children, ...restProps }: IDescriptionProps) {
+Header.Description = function HeaderDescription({ children, ...restProps }) {
   return <Description {...restProps}>{children}</Description>;
 };
 
@@ -93,20 +94,15 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
   return <Group {...restProps}>{children}</Group>;
 };
 
-// TODO Correct this gradient
-
-Header.Gradient = function HeaderGradient({ ...restProps }) {
-  return <Gradient {...restProps} />;
-};
-
-interface ILogoProps {
-  to: string;
+export interface LogoProps extends LinkProps {
+  src: string;
+  alt: string;
 }
 
-Header.Logo = function HeaderLogo({ to, ...restProps }: ILogoProps) {
+Header.Logo = function HeaderLogo({ to, src, alt }: LogoProps) {
   return (
     <RouterLink to={to}>
-      <Logo {...restProps} />
+      <Logo src={src} alt={alt} />
     </RouterLink>
   );
 };
@@ -158,8 +154,27 @@ Header.Title = function HeaderTitle({ children, ...restProps }: { children: stri
   return <Title {...restProps}>{children}</Title>;
 };
 
-Header.Top = function HeaderTop({ children, ...restProps }) {
-  return <Top {...restProps}>{children}</Top>;
+export type TopFrameProps = {
+  children: React.ReactNode;
+  isNotBrowse?: boolean;
+};
+
+Header.TopFrame = function HeaderTop({ children, isNotBrowse = false, ...restProps }: TopFrameProps) {
+  const [isDark, setIsDark] = useState(false);
+
+  const position = useScroll();
+
+  useEffect(() => {
+    if (isNotBrowse && position > 5) {
+      setIsDark(true);
+    } else setIsDark(false);
+  }, [position]);
+
+  return (
+    <TopFrame isDark={isDark} isNotBrowse={!isNotBrowse} {...restProps}>
+      {children}
+    </TopFrame>
+  );
 };
 
 interface IMenuLinkProps {

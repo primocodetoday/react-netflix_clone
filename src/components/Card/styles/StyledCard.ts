@@ -37,16 +37,15 @@ export const SubTitle = styled.p`
 `;
 
 // you can do this in this ways
-interface RowStyledProps {
-  flexDirection: "row" | "column";
+export interface IRowStyledProps {
+  flexDirection: 'row' | 'column';
   alignItems: string;
-  margin: string
+  margin: string;
 }
 
-export const Row = styled.div<RowStyledProps>`
+export const Row = styled.div<IRowStyledProps>`
   display: flex;
-  flex-direction: ${({ flexDirection }) =>
-    flexDirection === 'row' ? 'row' : 'column'};
+  flex-direction: ${({ flexDirection }) => (flexDirection === 'row' ? 'row' : 'column')};
   align-items: ${({ alignItems }) => alignItems || `center`};
   padding: 10px 56px;
   margin: ${({ margin }) => margin || `0`};
@@ -72,16 +71,15 @@ export const Text = styled.p`
   user-select: none;
 `;
 
-interface FeatureTextStyledProps {
-  fontWeight: "bold" | "normal"
+export interface FeatureTextStyledProps {
+  fontWeight?: 'bold';
 }
 
 export const FeatureText = styled.p<FeatureTextStyledProps>`
   margin: 0;
   color: white;
   font-size: 18px;
-  font-weight: ${({ fontWeight }) =>
-    fontWeight === 'bold' ? 'bold' : 'normal'};
+  font-weight: ${({ fontWeight }) => (fontWeight === 'bold' ? 'bold' : 'normal')};
 
   @media (max-width: 600px) {
     line-height: 22px;
@@ -89,7 +87,7 @@ export const FeatureText = styled.p<FeatureTextStyledProps>`
 `;
 
 interface FeatureStyledProps {
-  background: string
+  background: string;
 }
 
 export const Feature = styled.div<FeatureStyledProps>`
@@ -138,7 +136,7 @@ export const FeatureClose = styled.button`
   }
 `;
 interface MaturityStyledProps {
-  rating: number
+  rating: number;
 }
 
 export const Maturity = styled.div<MaturityStyledProps>`

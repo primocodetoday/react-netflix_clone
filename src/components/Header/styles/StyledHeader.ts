@@ -24,11 +24,17 @@ export const Button = styled(RouterLink)`
   }
 `;
 
-export const Container = styled.div<{ bg: string; isNotBrowse: boolean; isProfiles: boolean }>`
+interface IContainerProps {
+  bg?: string;
+  isNotBrowse: boolean;
+  isProfiles: boolean;
+}
+
+export const Container = styled.div<IContainerProps>`
   display: flex;
   position: relative;
-  flex-direction: column;
   height: 58vw;
+  flex-direction: column;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -48,8 +54,17 @@ export const Container = styled.div<{ bg: string; isNotBrowse: boolean; isProfil
   ${({ isNotBrowse }) =>
     isNotBrowse &&
     css`
-      position: unset;
       height: unset;
+
+      ::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+        color: white;
+      }
     `}
 
   ${({ isProfiles }) =>
@@ -75,7 +90,7 @@ export const Feature = styled.div`
   } */
 `;
 
-export const Gradient = styled.div`
+export const Shadow = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -86,13 +101,21 @@ export const Gradient = styled.div`
   color: white;
 `;
 
-export const Top = styled.div`
+export interface ITopFrame {
+  isDark: boolean;
+  isNotBrowse: boolean;
+}
+
+export const TopFrame = styled.div<ITopFrame>`
   display: flex;
+  position: sticky;
+  top: 0;
   z-index: 3;
   justify-content: space-between;
   align-items: center;
-  margin: 0 56px;
-  padding-top: 20px;
+  padding: 10px 20px;
+  background: ${({ isDark }) =>
+    isDark ? 'rgb(20, 20, 20)' : 'linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))'};
   transition: all 0.5s;
   transition-timing-function: ease-in;
 
@@ -100,9 +123,16 @@ export const Top = styled.div`
     display: flex;
   }
 
-  @media (max-width: 1000px) {
-    margin: 0 30px;
-  }
+  ${({ isNotBrowse }) =>
+    isNotBrowse &&
+    css`
+      position: relative;
+    `}
+`;
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Logo = styled.img`
@@ -162,11 +192,6 @@ export const MenuLink = styled.p<{ active: boolean }>`
 `;
 
 // TODO make burger for small screens
-
-export const Group = styled.div`
-  display: flex;
-  align-items: center;
-`;
 
 export const Picture = styled.button<{ src: string }>`
   width: 32px;

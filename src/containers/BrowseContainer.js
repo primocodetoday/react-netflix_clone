@@ -1,10 +1,11 @@
 ﻿import React, { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Header, Card, Player } from 'components';
-import { routes } from 'routes';
+import { ROUTES } from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 import { FooterContainer } from 'containers/FooterContainer';
+import { Row } from 'components/Row/Row';
 
 export const BrowseContainer = ({ slides, user, handleSignOut }) => {
   const [category, setCategory] = useState('series');
@@ -40,9 +41,9 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
   return (
     <>
       <Header bg={movie?.backdrop_path}>
-        <Header.Top>
+        <Header.TopFrame>
           <Header.Group>
-            <Header.Logo to={routes.home} src="assets/images/Netflix_logo.png" alt="Netflix" />
+            <Header.Logo to={ROUTES.HOME} src="assets/images/Netflix_logo.png" alt="Netflix" />
             <Header.MenuLink to="#">Home</Header.MenuLink>
             <Header.MenuLink
               active={category === 'series' ? 'true' : 'false'}
@@ -76,7 +77,7 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
               </Header.Dropdown>
             </Header.Profile>
           </Header.Group>
-        </Header.Top>
+        </Header.TopFrame>
         <Header.Feature>
           <Header.Title>{movie?.name || movie?.title || movie?.original_name}</Header.Title>
           <Header.Description>{truncate(movie?.overview, 150)}</Header.Description>
@@ -109,6 +110,14 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
           </Card>
         ))}
       </Card.Row>
+      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
       <FooterContainer />
     </>
   );

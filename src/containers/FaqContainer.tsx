@@ -1,9 +1,10 @@
 ﻿import React from 'react';
 import { Accordion } from 'components';
-import faqsData from 'constants/faqsData.json';
+import { faqsData } from 'constants/faqsData';
 import { CtaContainer } from './CtaContainer';
+// @ts-check
 
-export const FaqContainer = () => {
+export const FaqContainer: React.FC = () => {
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>

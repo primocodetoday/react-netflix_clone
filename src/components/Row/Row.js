@@ -1,13 +1,13 @@
 ﻿import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import instance from 'axios/init';
-import 'components/_old/Row/Row.scss';
+import './Row.scss';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 
 const baseUrl = 'https://image.tmdb.org/t/p/original/';
 
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+export const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrialerUrl] = useState('');
 
@@ -50,9 +50,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             onClick={() => handleClick(movie)}
             key={movie.id}
             className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
-            src={`${baseUrl}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
+            src={`${baseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             alt={movie.name}
           />
         ))}

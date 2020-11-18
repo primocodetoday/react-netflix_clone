@@ -1,4 +1,5 @@
-﻿import React, { createContext, useContext, useState } from 'react';
+﻿import React, { createContext, useState } from 'react';
+import { IRowStyledProps } from './styles/StyledCard';
 
 import {
   Container,
@@ -18,11 +19,52 @@ import {
   Maturity,
 } from './styles/StyledCard';
 
-export const FeatureContext = createContext();
+interface IFeatureContextType {
+  showFeature: boolean;
+  setShowFeature: React.Dispatch<React.SetStateAction<boolean>>;
+  itemFeature: IDataProps;
+  setItemFeature: React.Dispatch<React.SetStateAction<IDataProps>>;
+}
 
-export const Card = ({ children, ...restProps }) => {
+export const FeatureContext = createContext<IFeatureContextType | null>(null);
+
+interface ICardComposition {
+  Row: React.FC<IRowProps>;
+  Title: React.FC;
+  SubTitle: React.FC;
+  Text: React.FC;
+  Entities: React.FC<{ children: React.ReactNode }>;
+  Meta: React.FC;
+  Feature: React.FC<{ children: React.ReactNode; category: string }>;
+  Item: React.FC<IItemProps>;
+  Poster: React.FC;
+}
+
+export interface IDataProps {
+  id: string;
+  slug: string;
+  title: string;
+  genre: string;
+  maturity: number;
+  description: string;
+}
+
+const defaultItemFeature: IDataProps = {
+  id: 'loading',
+  slug: 'loading...',
+  title: 'loading...',
+  genre: 'loading...',
+  maturity: 18,
+  description: 'loading...',
+};
+
+type ComponentProps = {
+  children: React.ReactNode;
+};
+
+export const Card: React.FC<ComponentProps> & ICardComposition = ({ children, ...restProps }) => {
   const [showFeature, setShowFeature] = useState(false);
-  const [itemFeature, setItemFeature] = useState({});
+  const [itemFeature, setItemFeature] = useState(defaultItemFeature);
 
   return (
     <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
@@ -31,7 +73,11 @@ export const Card = ({ children, ...restProps }) => {
   );
 };
 
-Card.Row = function CardRow({ children, ...restProps }) {
+interface IRowProps extends IRowStyledProps {
+  children: React.ReactNode;
+}
+
+Card.Row = function CardRow({ children, ...restProps }: IRowProps) {
   return <Row {...restProps}>{children}</Row>;
 };
 
@@ -55,11 +101,13 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
 };
 
+// FIXME Solve problem with default itemFeature types
+
 Card.Feature = function CardFeature({ children, category, ...restProps }) {
-  const { showFeature, itemFeature, setShowFeature } = useContext(FeatureContext);
+  const { showFeature, itemFeature, setShowFeature } = useCard();
 
   return showFeature ? (
-    <Feature src={`assets/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`} {...restProps}>
+    <Feature background={`assets/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`} {...restProps}>
       <Content>
         <FeatureTitle>{itemFeature.title}</FeatureTitle>
         <FeatureText>{itemFeature.description}</FeatureText>
@@ -78,8 +126,13 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
   ) : null;
 };
 
+interface IItemProps {
+  item: IDataProps;
+  children: React.ReactNode;
+}
+
 Card.Item = function CardItem({ item, children, ...restProps }) {
-  const { setShowFeature, setItemFeature } = useContext(FeatureContext);
+  const { setShowFeature, setItemFeature } = useCard();
 
   return (
     <Item
@@ -96,4 +149,12 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
 
 Card.Poster = function CardPoster({ ...restProps }) {
   return <Poster {...restProps} />;
+};
+
+export const useCard = (): IFeatureContextType => {
+  const context = React.useContext(FeatureContext);
+  if (!context) {
+    throw new Error('This component must be used within a <Accordion> component.');
+  }
+  return context;
 };
