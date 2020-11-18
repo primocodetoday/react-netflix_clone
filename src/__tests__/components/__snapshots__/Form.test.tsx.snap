@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form/> renders properly with an error 1`] = `
+<div
+  class="StyledForm__Container-sc-1t60tbe-0 jHRjtY"
+>
+  <div
+    class="StyledForm__Error-sc-1t60tbe-1 lhVaYd"
+  >
+    You name not match pattern
+  </div>
+  <button
+    class="StyledForm__Submit-sc-1t60tbe-8 ITnHm"
+    type="submit"
+  >
+    Sign In
+  </button>
+</div>
+`;

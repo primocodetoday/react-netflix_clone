@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner/> render properly with just a sub-title 1`] = `
+<div
+  class="StyledBanner__Container-j7lj91-0 eYceKL"
+>
+  <h2
+    class="StyledBanner__SubTitle-j7lj91-2 fOkbqo"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;
+
+exports[`<Banner/> render properly with just a title 1`] = `
+<div
+  class="StyledBanner__Container-j7lj91-0 eYceKL"
+>
+  <h1
+    class="StyledBanner__Title-j7lj91-1 kDIfLf"
+  >
+    Unlimited films
+  </h1>
+</div>
+`;
+
+exports[`<Banner/> render properly with sub-components & children 1`] = `
+<div
+  class="StyledBanner__Container-j7lj91-0 eYceKL"
+>
+  <h1
+    class="StyledBanner__Title-j7lj91-1 kDIfLf"
+  >
+    Unlimited movies
+  </h1>
+  <h2
+    class="StyledBanner__SubTitle-j7lj91-2 fOkbqo"
+  >
+    Watch anywhere
+  </h2>
+</div>
+`;

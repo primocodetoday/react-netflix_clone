@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player /> renders properly with toggle Play 1`] = `
+<div
+  class="StyledPlayer__Container-x6dpgp-0"
+>
+  <button
+    class="StyledPlayer__Button-x6dpgp-4 dITxVl"
+  >
+    Play
+  </button>
+</div>
+`;

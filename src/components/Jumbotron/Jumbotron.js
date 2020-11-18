@@ -13,7 +13,7 @@ import {
   Video,
 } from './styles/StyledJumbotron';
 
-const Jumbotron = ({ children, direction }, ...restProps) => {
+export const Jumbotron = ({ children, direction }, ...restProps) => {
   return (
     <AnimationCard {...restProps}>
       <CardContainer direction={direction}>{children}</CardContainer>
@@ -41,10 +41,7 @@ Jumbotron.Image = function JumbotronImage({ ...restProps }) {
   return <Image {...restProps} />;
 };
 
-Jumbotron.CardAnimation = function JumbotronCardAnimation({
-  children,
-  ...restProps
-}) {
+Jumbotron.CardAnimation = function JumbotronCardAnimation({ children, ...restProps }) {
   return <CardAnimation {...restProps}>{children}</CardAnimation>;
 };
 
@@ -63,5 +60,3 @@ Jumbotron.propTypes = {
 Jumbotron.defaultProps = {
   direction: 'row',
 };
-
-export default Jumbotron;
