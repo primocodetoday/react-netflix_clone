@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Header, Profiles } from 'components';
-import { routes } from 'routes';
+import { ROUTES } from 'routes';
 
 export const ProfilesSelection = ({ user, setProfile, setLoading }) => {
   const handleProfileClick = () => {
@@ -15,7 +15,7 @@ export const ProfilesSelection = ({ user, setProfile, setLoading }) => {
     <>
       <Header isNotBrowse isProfiles>
         <Header.Top>
-          <Header.Logo to={routes.home} src="assets/images/Netflix_logo.png" alt="Netflix" />
+          <Header.Logo to={ROUTES.HOME} src="assets/images/Netflix_logo.png" alt="Netflix" />
         </Header.Top>
       </Header>
       <Profiles>

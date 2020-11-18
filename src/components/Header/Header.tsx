@@ -1,7 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
-// import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, LinkProps } from 'react-router-dom';
 import { useScroll } from 'hooks/useScroll';
-import { IHeaderProps } from './Header.interface';
 
 import {
   Button,
@@ -9,9 +8,8 @@ import {
   Description,
   Dropdown,
   Feature,
-  Shadow,
   Group,
-  // Logo,
+  Logo,
   MenuLink,
   Picture,
   Play,
@@ -29,25 +27,33 @@ interface HeaderComposition {
   Dropdown: React.FC;
   Feature: React.FC;
   Group: React.FC;
-  Shadow: React.FC;
   Play: React.FC<IPlayProps>;
   Profile: React.FC;
   Picture: React.FC<IPictureProps>;
   Search: React.FC<ISearchProps>;
   Title: React.FC<{ children: string }>;
-  TopFrame: React.FC;
+  TopFrame: React.FC<TopFrameProps>;
   MenuLink: React.FC<IMenuLinkProps>;
-  // Logo: React.FC;
+  Logo: React.FC<LogoProps>;
+}
+
+export interface IHeaderProps {
+  bg?: string;
+  isNotBrowse?: boolean;
+  isProfiles?: boolean;
+  children: React.ReactNode;
 }
 
 export const Header: React.FC<IHeaderProps> & HeaderComposition = ({
   bg,
-  isNotBrowse,
-  isProfiles,
+  isNotBrowse = false,
+  isProfiles = false,
   children,
   ...restProps
 }: IHeaderProps) => {
   return (
+    // isNotBrowse - default background
+    // is Profile - no background
     <Container bg={bg} isNotBrowse={isNotBrowse} isProfiles={isProfiles} {...restProps}>
       {children}
     </Container>
@@ -88,19 +94,18 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
   return <Group {...restProps}>{children}</Group>;
 };
 
-// TODO Correct this gradient
+export interface LogoProps extends LinkProps {
+  src: string;
+  alt: string;
+}
 
-Header.Shadow = function HeaderGShadow({ ...restProps }) {
-  return <Shadow {...restProps} />;
+Header.Logo = function HeaderLogo({ to, src, alt }: LogoProps) {
+  return (
+    <RouterLink to={to}>
+      <Logo src={src} alt={alt} />
+    </RouterLink>
+  );
 };
-
-// Header.Logo = function HeaderLogo({ to, ...restProps }) {
-//   return (
-//     <RouterLink to={to}>
-//       <Logo {...restProps} />
-//     </RouterLink>
-//   );
-// };
 
 interface IPlayProps {
   children: string;
@@ -149,19 +154,24 @@ Header.Title = function HeaderTitle({ children, ...restProps }: { children: stri
   return <Title {...restProps}>{children}</Title>;
 };
 
-Header.TopFrame = function HeaderTop({ children, ...restProps }) {
-  const [show, handleShow] = useState(false);
+export type TopFrameProps = {
+  children: React.ReactNode;
+  isNotBrowse?: boolean;
+};
+
+Header.TopFrame = function HeaderTop({ children, isNotBrowse = false, ...restProps }: TopFrameProps) {
+  const [isDark, setIsDark] = useState(false);
 
   const position = useScroll();
 
   useEffect(() => {
-    if (position > 5) {
-      handleShow(true);
-    } else handleShow(false);
+    if (isNotBrowse && position > 5) {
+      setIsDark(true);
+    } else setIsDark(false);
   }, [position]);
 
   return (
-    <TopFrame show={show} {...restProps}>
+    <TopFrame isDark={isDark} isNotBrowse={!isNotBrowse} {...restProps}>
       {children}
     </TopFrame>
   );

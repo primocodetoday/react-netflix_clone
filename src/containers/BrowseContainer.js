@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Header, Card, Player } from 'components';
-import { routes } from 'routes';
+import { ROUTES } from 'routes';
 import useRandomMovie from 'hooks/useRandomMovie';
 import requests from 'axios/requests';
 import { FooterContainer } from 'containers/FooterContainer';
@@ -43,7 +43,7 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
       <Header bg={movie?.backdrop_path}>
         <Header.Top>
           <Header.Group>
-            <Header.Logo to={routes.home} src="assets/images/Netflix_logo.png" alt="Netflix" />
+            <Header.Logo to={ROUTES.HOME} src="assets/images/Netflix_logo.png" alt="Netflix" />
             <Header.MenuLink to="#">Home</Header.MenuLink>
             <Header.MenuLink
               active={category === 'series' ? 'true' : 'false'}

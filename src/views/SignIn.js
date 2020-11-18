@@ -4,7 +4,7 @@ import FirebaseContext from 'context/firebase';
 import { HeaderContainer } from 'containers/HeaderContainer';
 import { FooterContainer } from 'containers/FooterContainer';
 import { Form } from 'components';
-import { routes } from 'routes';
+import { ROUTES } from 'routes';
 
 export const SignIn = () => {
   const history = useHistory();
@@ -23,7 +23,7 @@ export const SignIn = () => {
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
       .then(() => {
-        history.push(routes.browse);
+        history.push(ROUTES.BROWSE);
       })
       .catch(({ message }) => {
         setEmailAddress('');

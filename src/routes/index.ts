@@ -1,6 +1,6 @@
-﻿export const routes = {
-  home: '/',
-  browse: '/browse',
-  signUp: '/signup',
-  signIn: '/signin',
-};
+﻿export enum ROUTES {
+  HOME = '/',
+  BROWSE = '/browse',
+  SIGNUP = '/signup',
+  SIGNIN = '/signin',
+}

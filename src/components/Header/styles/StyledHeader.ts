@@ -25,16 +25,15 @@ export const Button = styled(RouterLink)`
 `;
 
 interface IContainerProps {
-  bg: string | undefined;
-  isNotBrowse: boolean | undefined;
-  isProfiles: boolean | undefined;
+  bg?: string;
+  isNotBrowse: boolean;
+  isProfiles: boolean;
 }
 
 export const Container = styled.div<IContainerProps>`
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 58vw;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -54,8 +53,17 @@ export const Container = styled.div<IContainerProps>`
   ${({ isNotBrowse }) =>
     isNotBrowse &&
     css`
-      position: unset;
       height: unset;
+
+      ::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+        color: white;
+      }
     `}
 
   ${({ isProfiles }) =>
@@ -93,7 +101,8 @@ export const Shadow = styled.div`
 `;
 
 export interface ITopFrame {
-  show: boolean;
+  isDark: boolean;
+  isNotBrowse: boolean;
 }
 
 export const TopFrame = styled.div<ITopFrame>`
@@ -104,14 +113,20 @@ export const TopFrame = styled.div<ITopFrame>`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: ${({ show }) =>
-    show ? 'rgb(20, 20, 20)' : 'linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))'};
+  background: ${({ isDark }) =>
+    isDark ? 'rgb(20, 20, 20)' : 'linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))'};
   transition: all 0.5s;
   transition-timing-function: ease-in;
 
   a {
     display: flex;
   }
+
+  ${({ isNotBrowse }) =>
+    isNotBrowse &&
+    css`
+      position: relative;
+    `}
 `;
 
 export const Group = styled.div`
