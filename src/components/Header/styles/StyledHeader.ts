@@ -33,6 +33,7 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   display: flex;
   position: relative;
+  height: 58vw;
   flex-direction: column;
   background-repeat: no-repeat;
   background-position: center center;

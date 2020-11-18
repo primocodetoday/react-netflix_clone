@@ -41,7 +41,7 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
   return (
     <>
       <Header bg={movie?.backdrop_path}>
-        <Header.Top>
+        <Header.TopFrame>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} src="assets/images/Netflix_logo.png" alt="Netflix" />
             <Header.MenuLink to="#">Home</Header.MenuLink>
@@ -77,7 +77,7 @@ export const BrowseContainer = ({ slides, user, handleSignOut }) => {
               </Header.Dropdown>
             </Header.Profile>
           </Header.Group>
-        </Header.Top>
+        </Header.TopFrame>
         <Header.Feature>
           <Header.Title>{movie?.name || movie?.title || movie?.original_name}</Header.Title>
           <Header.Description>{truncate(movie?.overview, 150)}</Header.Description>

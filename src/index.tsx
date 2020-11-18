@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { App } from 'App';
 import FirebaseContext from 'context/firebase';
 import firebase from 'firebase/init';
-import { GlobalStyle } from 'global-styles';
+import { GlobalStyle } from 'theme/global-styles';
 
 render(
   <React.StrictMode>
