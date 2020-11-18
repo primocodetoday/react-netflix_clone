@@ -1,5 +1,9 @@
 ﻿import React from 'react';
 
-const FirebaseContext = React.createContext<unknown | null>(null);
+interface ContextProps {
+  firebase?: firebase.app.App;
+}
+
+const FirebaseContext = React.createContext<Partial<ContextProps>>({});
 
 export default FirebaseContext;

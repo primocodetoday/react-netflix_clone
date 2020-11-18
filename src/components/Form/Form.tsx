@@ -27,7 +27,7 @@ export const FormError: React.FC<ErrorProps> = ({ children, ...restProps }) => {
 
 Form.Error = FormError;
 
-export interface BaseProps {
+export interface BaseProps extends React.FormHTMLAttributes<HTMLFormElement> {
   children: React.ReactNode;
 }
 
